@@ -1,0 +1,336 @@
+以下のYML仕様書に基づいて、完全に動作するランディングページ(HTML/CSS/JavaScript)を作成してください。
+
+[# LP制作プロンプト: AI×デザイン制作会社
+
+project_info:
+  project_name: "AI×デザイン制作会社 公式LP"
+  client: "合同会社(設立予定) - 夫婦運営デザイン制作会社"
+  location: "神戸市北区(全国対応)"
+  theme: "AI × デザインで、伝わる販促物をもっと早く、もっと身近に。"
+
+design_concept:
+  tone: "温かみのある、親しみやすい、信頼感のあるデザイン"
+  target_feeling: 
+    - "高級感よりも安心感"
+    - "相談しやすさ"
+    - "夫婦チームならではの柔軟な対応"
+    - "堅すぎない温かさ"
+  
+  color_scheme:
+    primary: "#D4856A"  # テラコッタ
+    secondary: "#F5F0E8"  # クリーム
+    accent: "#E8C48F"  # ソフトゴールド
+    text_primary: "#3D3D3D"
+    text_secondary: "#6B6B6B"
+  
+  design_style:
+    - "余白を十分に確保したゆとりあるレイアウト"
+    - "角丸カード、柔らかい影を使用"
+    - "手描き感のあるアイコン"
+    - "やわらかいイラスト要素"
+    - "AIを感じさせる光のライン"
+
+typography:
+  japanese_font:
+    heading: "Noto Sans JP (Bold/Medium) または 游ゴシック"
+    body: "Noto Sans JP (Regular) または 游ゴシック"
+    style: "優しく読みやすいフォント"
+  
+  font_sizes:
+    h1: "clamp(2rem, 5vw, 3.5rem)"
+    h2: "clamp(1.5rem, 4vw, 2.5rem)"
+    h3: "clamp(1.2rem, 3vw, 1.8rem)"
+    body: "clamp(1rem, 2.5vw, 1.125rem)"
+
+sections:
+  # ヒーローセクション
+  - section_id: "hero"
+    section_name: "ファーストビュー"
+    layout: "フルスクリーン、中央揃え"
+    content:
+      main_headline: "AI×デザインで、<br>伝わる販促物を<br>もっと早く、もっと身近に。"
+      sub_headline: "AIによるスピード感と、デザイナーの丁寧な仕上がり。<br>チラシ・SNS・LP・撮影・ブランディングまでワンストップでサポートします。"
+      cta_button:
+        text: "まずはお気軽にご相談ください"
+        link: "#contact"
+        style: "大きめのボタン、テラコッタ背景、白文字、ホバーで少し明るく"
+    visual_elements:
+      - "クリーム背景にテラコッタの羽根モチーフ"
+      - "ソフトゴールドのアクセントライン"
+      - "AI感を表現する柔らかい光のライン"
+      - "デザインツール(ペン、カメラ、PC)の柔らかいイラスト"
+      - "夫婦チームをイメージする2人のシルエット"
+
+  # 悩み共感セクション
+  - section_id: "pain-points"
+    section_name: "こんなお悩みありませんか?"
+    layout: "2カラムまたはカードグリッド"
+    background: "薄いクリーム背景"
+    content:
+      heading: "こんなお悩みありませんか?"
+      problems:
+        - icon: "⏰"
+          text: "チラシやSNS画像を作るのに時間がかかる"
+        - icon: "💭"
+          text: "お店の魅力がうまく伝わらない"
+        - icon: "💸"
+          text: "デザイン会社に頼むのは予算的に厳しい"
+        - icon: "🤖"
+          text: "AIを業務に活用したいけど何から始めればいいかわからない"
+      closing_text: "そんな方に、優しく寄り添いながらサポートさせていただきます。"
+    design_notes:
+      - "各悩みをカード形式で表示"
+      - "アイコンは手描き風で温かみのあるスタイル"
+      - "ホバーで軽く浮き上がるエフェクト"
+
+  # 強みセクション
+  - section_id: "strengths"
+    section_name: "私たちの強み"
+    layout: "中央揃え + 3カラムグリッド"
+    background: "白背景"
+    content:
+      heading: "私たちの強み"
+      main_value_proposition:
+        title: "高品質を、圧倒的な納期と低コストでご提供"
+        process:
+          step1: "AIで下案生成"
+          arrow: "↓"
+          step2: "デザイナーが丁寧に仕上げ"
+      
+      key_strengths:
+        - icon: "⚡"
+          title: "スピード対応"
+          description: "夫婦チームならではの柔軟な対応とスピード感"
+        
+        - icon: "👁️"
+          title: "現場目線"
+          description: "温浴・飲食業界の現場経験を活かしたブランディング"
+        
+        - icon: "📷"
+          title: "撮影対応"
+          description: "プロカメラによるメニュー・商品撮影も可能"
+        
+        - icon: "🎯"
+          title: "最適なご提案"
+          description: "中小企業、個人事業主、飲食店、温浴施設に最適"
+    design_notes:
+      - "プロセス図は視覚的にわかりやすく"
+      - "各強みカードに角丸と柔らかい影"
+      - "ソフトゴールドのアクセント使用"
+
+  # サービス紹介セクション
+  - section_id: "services"
+    section_name: "提供サービス"
+    layout: "2×3グリッド(モバイルは1カラム)"
+    background: "薄いクリーム背景"
+    content:
+      heading: "サービス一覧"
+      services:
+        - service_name: "ポスター・チラシ制作"
+          icon: "📄"
+          icon_style: "手描き風ドキュメントアイコン"
+          description: "集客に効く、伝わるデザインを"
+        
+        - service_name: "SNS運用素材制作"
+          icon: "📱"
+          icon_style: "スマートフォンアイコン"
+          description: "日々の投稿を魅力的に"
+        
+        - service_name: "LP制作"
+          icon: "🌐"
+          icon_style: "Webページアイコン"
+          description: "成果につながるランディングページ"
+        
+        - service_name: "ブランディング支援"
+          icon: "✨"
+          icon_style: "ロゴ・デザインアイコン"
+          description: "ロゴ・名刺・会社案内など"
+        
+        - service_name: "メニュー・商品撮影"
+          icon: "📷"
+          icon_style: "カメラアイコン"
+          description: "プロ品質の撮影で商品の魅力を最大化"
+        
+        - service_name: "AI業務効率化コンサル"
+          icon: "⚙️"
+          icon_style: "AI・歯車アイコン"
+          description: "業務にAIを活用するサポート"
+    design_notes:
+      - "各サービスカードはホバーで拡大"
+      - "アイコンは温かみのあるテラコッタ色"
+      - "カード背景は白、柔らかい影付き"
+
+  # 会社紹介セクション
+  - section_id: "about"
+    section_name: "私たちについて"
+    layout: "中央揃え、テキスト+イラスト"
+    background: "白背景"
+    content:
+      heading: "私たちについて"
+      company_name: "合同会社(設立予定)"
+      location: "神戸市北区を拠点に、全国対応"
+      description: |
+        AI活用とビジュアルデザインを組み合わせた、
+        夫婦チームのワンストップ制作会社です。
+        
+        大手にはない柔軟な対応と温かみのあるサポートで、
+        お客様の「伝えたい」を形にします。
+    visual_elements:
+      - "夫婦で制作している雰囲気のイラスト"
+      - "温かみのある抽象的な人物アイコン"
+      - "テラコッタとゴールドの装飾"
+
+  # お問い合わせセクション
+  - section_id: "contact"
+    section_name: "お問い合わせ"
+    layout: "中央揃え、フォームエリア"
+    background: "テラコッタのグラデーション背景"
+    content:
+      heading: "まずはお気軽にご相談ください"
+      subheading: "小さなご相談から、お待ちしております。"
+      contact_methods:
+        - type: "メールアドレス"
+          placeholder: "info@example.com"
+          note: "※実際のメールアドレスを記載"
+        
+        - type: "電話番号"
+          placeholder: "XXX-XXXX-XXXX"
+          note: "※実際の電話番号を記載"
+        
+        - type: "QRコード"
+          description: "LINEまたはお問い合わせフォームへのQRコード"
+          size: "200px × 200px"
+      
+      form_fields:
+        - label: "お名前"
+          type: "text"
+          required: true
+        
+        - label: "メールアドレス"
+          type: "email"
+          required: true
+        
+        - label: "電話番号"
+          type: "tel"
+          required: false
+        
+        - label: "ご相談内容"
+          type: "textarea"
+          required: true
+          placeholder: "どんなことでもお気軽にご相談ください"
+        
+        - type: "submit"
+          button_text: "送信する"
+          button_style: "白背景、テラコッタ文字、大きめサイズ"
+    design_notes:
+      - "フォームは白背景のカードに配置"
+      - "入力欄は角丸、フォーカス時にソフトゴールドのボーダー"
+      - "送信ボタンはホバーで色が変わる"
+
+  # フッター
+  - section_id: "footer"
+    section_name: "フッター"
+    background: "#3D3D3D (ダークグレー)"
+    content:
+      company_name: "合同会社(設立予定)"
+      location: "神戸市北区"
+      links:
+        - text: "プライバシーポリシー"
+          href: "#privacy"
+        - text: "特定商取引法に基づく表記"
+          href: "#legal"
+      copyright: "© 2026 合同会社. All rights reserved."
+    design_notes:
+      - "シンプルで控えめなフッター"
+      - "テキストは薄いグレー"
+      - "リンクはホバーでソフトゴールド"
+
+responsive_design:
+  breakpoints:
+    mobile: "< 640px"
+    tablet: "640px - 1024px"
+    desktop: "> 1024px"
+  
+  mobile_considerations:
+    - "ハンバーガーメニュー導入"
+    - "グリッドは1カラムに変更"
+    - "フォントサイズは可読性重視"
+    - "タップしやすいボタンサイズ(最低44px)"
+    - "余白を保ちつつコンパクトに"
+
+animations:
+  - type: "スクロールフェードイン"
+    target: "各セクションの見出しとカード"
+    timing: "0.6s ease-out"
+  
+  - type: "ホバーエフェクト"
+    target: "ボタン、カード、リンク"
+    effect: "軽い拡大、影の変化、色の変化"
+  
+  - type: "スムーススクロール"
+    target: "アンカーリンク"
+    behavior: "smooth"
+
+technical_requirements:
+  - "HTML5 + CSS3 (Flexbox/Grid使用)"
+  - "モバイルファースト設計"
+  - "SEO最適化(meta tags, semantic HTML)"
+  - "ページ読み込み速度最適化"
+  - "アクセシビリティ対応(ARIA, キーボード操作)"
+  - "OGP設定(SNSシェア用)"
+  - "Google Fonts読み込み(Noto Sans JP)"
+
+assets_needed:
+  images:
+    - "ヒーローセクション用のイラスト・ビジュアル"
+    - "夫婦チームを表現するイラスト"
+    - "各サービスアイコン(6種類)"
+    - "デザインツールのイラスト(ペン、カメラ、PC等)"
+  
+  icons:
+    - "手描き風アイコンセット"
+    - "Font Awesome または Feather Icons"
+  
+  graphics:
+    - "テラコッタの羽根モチーフ"
+    - "ソフトゴールドのアクセントライン"
+    - "AI感のある光のライン"
+
+additional_notes: |
+  - 全体的に「安心感」「相談しやすさ」「温かさ」を最優先
+  - 高級感や華美な装飾は避け、親しみやすさを重視
+  - 読み込み速度を考慮し、画像は最適化
+  - コンタクト導線を明確に(複数箇所にCTAボタン)
+  - 信頼感を損なわないよう、余白と整理されたレイアウトを維持
+  - 夫婦経営の小さな会社らしい、人間味のあるトーンを保つ
+
+implementation_approach: |
+  Claudeに以下のように依頼してください:
+  
+  「このYML仕様に基づいて、完全なHTML/CSS/JavaScriptのランディングページを作成してください。
+  
+  要件:
+  - セマンティックHTMLを使用
+  - モダンなCSS(Flexbox, Grid, CSS Variables使用)
+  - バニラJavaScriptでシンプルなインタラクション実装
+  - レスポンシブデザイン完全対応
+  - アクセシビリティ考慮
+  - コメント付きでわかりやすいコード
+  - 1つのHTMLファイルにCSSとJSを含める(または分離ファイルでも可)
+  
+  デザインは、温かみ・親しみやすさ・信頼感を重視し、
+  テラコッタ(#D4856A)、クリーム(#F5F0E8)、ソフトゴールド(#E8C48F)の
+  配色で統一してください。」
+]
+
+要件:
+- モダンで保守しやすいコード
+- レスポンシブ対応
+- アニメーション・インタラクション実装
+- SEO/アクセシビリティ対応
+- コメント付き
+
+すべてのセクションを含めた完全なコードを提供してください。
+
+
+
