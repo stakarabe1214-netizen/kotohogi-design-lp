@@ -1,0 +1,10 @@
+.env.local
+.git
+.gitignore
+node_modules
+README.md
+docs/
+uploads.backup/
+*.backup/
+assets.backup/
+.DS_Store
