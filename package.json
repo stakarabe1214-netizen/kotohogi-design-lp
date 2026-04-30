@@ -1,0 +1,21 @@
+{
+  "name": "tsumugu-lp",
+  "version": "2.0.0",
+  "description": "AI × デザイン制作会社 Tsumugu ランディングページ with フォーム機能",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node -e \"require('dotenv').config(); require('./api/contact.js')\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["design", "ai", "form"],
+  "author": "Tsumugu",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0",
+    "nodemailer": "^6.9.0",
+    "dotenv": "^16.0.3",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {}
+}
