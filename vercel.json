@@ -1,12 +1,6 @@
 {
   "buildCommand": "npm install",
   "devCommand": "npm run dev",
-  "env": {
-    "MONGODB_URI": "@mongodb_uri",
-    "GMAIL_USER": "@gmail_user",
-    "GMAIL_PASSWORD": "@gmail_password",
-    "ADMIN_EMAIL": "@admin_email"
-  },
   "functions": {
     "api/**/*.js": {
       "memory": 1024,
