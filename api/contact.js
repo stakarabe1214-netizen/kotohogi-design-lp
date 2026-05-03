@@ -53,13 +53,16 @@ module.exports = async (req, res) => {
     await contact.save();
     console.log(`✓ Contact saved: ${contact._id}`);
 
-    // メール送信（非同期、エラーは記録するが失敗とは見なさない）
-    Promise.all([
-      sendConfirmationEmail(contact),
-      sendAdminNotification(contact),
-    ]).catch((error) => {
-      console.error('Email sending failed:', error.message);
-    });
+    // メール送信（完了を待ってからレスポンスを返す）
+    try {
+      await Promise.all([
+        sendConfirmationEmail(contact),
+        sendAdminNotification(contact),
+      ]);
+      console.log('✓ Emails sent successfully');
+    } catch (emailError) {
+      console.error('Email sending failed:', emailError.message);
+    }
 
     // クライアントに成功レスポンスを返す
     res.status(200).json({
