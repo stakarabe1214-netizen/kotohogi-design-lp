@@ -280,14 +280,15 @@ button{font:inherit}
 /* ─── hero image slideshow ─── */
 .hero-art{
   position:relative;
-  width:100%;max-width:520px;
-  height:420px;
+  width:110%;max-width:620px;
+  height:520px;
   margin-left:auto;
   overflow:hidden;
-  border-radius:20px;
-  box-shadow:0 20px 60px rgba(0,0,0,.15);
+  border-radius:0;
+  -webkit-mask-image:radial-gradient(ellipse 88% 85% at 55% 50%, black 45%, transparent 100%);
+  mask-image:radial-gradient(ellipse 88% 85% at 55% 50%, black 45%, transparent 100%);
 }
-@media(max-width:768px){.hero-art{height:280px;max-width:100%;border-radius:14px}}
+@media(max-width:768px){.hero-art{width:100%;height:320px;max-width:100%}}
 @media(max-width:480px){.hero-art{display:none}}
 
 @keyframes heroFade{
