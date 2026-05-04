@@ -278,66 +278,148 @@ button{font:inherit}
 .hero-meta b{color:var(--terra-deep);font-weight:500}
 
 /* hero abstract art */
-.hero-art{position:relative;aspect-ratio:1/1;width:100%;max-width:540px;margin-left:auto}
-.hero-art .ring{position:absolute;border-radius:50%;border:1.5px solid var(--line-warm)}
-.hero-art .ring.r1{inset:0}
-.hero-art .ring.r2{inset:8%;border-color:rgba(94,154,110,.25)}
-.hero-art .ring.r3{inset:18%;border-style:dashed;border-color:rgba(217,199,102,.45)}
-
-.hero-art .blob{
-  position:absolute;left:50%;top:50%;
-  width:62%;height:62%;
-  transform:translate(-50%,-50%);
-  background:
-    radial-gradient(circle at 30% 30%, var(--leaf-1) 0%, var(--leaf-2) 50%, var(--leaf-3) 100%);
-  border-radius:62% 38% 55% 45% / 50% 45% 55% 50%;
-  box-shadow:0 30px 80px rgba(94,154,110,.35), inset 0 6px 30px rgba(255,255,255,.35);
-  animation:blob 14s ease-in-out infinite;
-  filter:saturate(1.05);
+/* ─── hero mockup zone ─── */
+.hero-art{
+  position:relative;
+  width:100%;max-width:520px;
+  height:480px;
+  margin-left:auto;
+  overflow:visible;
 }
-@keyframes blob{
-  0%,100%{border-radius:62% 38% 55% 45% / 50% 45% 55% 50%; transform:translate(-50%,-50%) rotate(0)}
-  50%{border-radius:42% 58% 38% 62% / 55% 35% 65% 45%; transform:translate(-50%,-50%) rotate(8deg)}
+@media(max-width:768px){.hero-art{transform:scale(.75);transform-origin:top center;height:360px}}
+@media(max-width:480px){.hero-art{display:none}}
+
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes floatY{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-8px)}
 }
 
-/* AI light lines */
-.hero-art .lines{position:absolute;inset:0;pointer-events:none}
-.hero-art .lines svg{width:100%;height:100%;overflow:visible}
-.hero-art .lines path{fill:none;stroke:var(--gold-deep);stroke-width:1;stroke-dasharray:5 8;opacity:.55;
-  animation:dash 9s linear infinite}
-@keyframes dash{to{stroke-dashoffset:-200}}
-
-/* feather motif */
-.hero-art .feather{
-  position:absolute;width:38%;height:auto;
-  top:6%;right:-4%;
-  transform:rotate(20deg);
-  filter:drop-shadow(0 12px 26px rgba(94,154,110,.3));
-  animation:float 6s ease-in-out infinite;
+/* MacBook (A) */
+.mock-laptop{
+  position:absolute;top:50px;left:0;width:370px;
+  transform:rotate(-3deg);z-index:1;
+  animation:fadeInUp .6s ease both;
+  transition:transform .3s ease;
 }
-@keyframes float{0%,100%{transform:rotate(20deg) translateY(0)}50%{transform:rotate(22deg) translateY(-12px)}}
-
-.hero-art .feather2{
-  position:absolute;width:24%;
-  bottom:8%;left:-2%;
-  transform:rotate(-32deg) scaleX(-1);
-  opacity:.7;
-  animation:float 7.5s ease-in-out infinite reverse;
+.mock-laptop:hover{transform:rotate(-3deg) translateY(-3px)}
+.mock-laptop .laptop-body{
+  background:#d1d1d1;border-radius:10px 10px 0 0;
+  padding:10px 12px 6px;
+  box-shadow:0 8px 32px rgba(0,0,0,.18);
 }
-
-/* tools floating */
-.tool{
-  position:absolute;background:#fff;border-radius:14px;
-  box-shadow:var(--shadow-md);padding:10px 14px;
-  display:flex;align-items:center;gap:8px;
-  font-family:var(--font-mono);font-size:11px;color:var(--ink);
-  animation:bobble 5s ease-in-out infinite;
+.mock-laptop .laptop-screen{
+  background:linear-gradient(135deg,#5e9a6e 0%,#8FBF9A 60%,#C7E0CC 100%);
+  border-radius:6px;height:190px;padding:14px 12px;overflow:hidden;
 }
-.tool svg{width:16px;height:16px;color:var(--terra)}
-.tool.t1{top:8%;left:-6%;animation-delay:.2s}
-.tool.t2{top:38%;right:-10%;animation-delay:1.2s}
-.tool.t3{bottom:6%;left:8%;animation-delay:2s}
-@keyframes bobble{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.mock-laptop .lp-block{background:rgba(255,255,255,.9);border-radius:4px;margin-bottom:8px}
+.mock-laptop .lp-block.hero-b{height:48px;display:flex;align-items:center;justify-content:center}
+.mock-laptop .lp-block.hero-b::before{content:'';display:block;width:60%;height:10px;background:#5e9a6e;border-radius:2px}
+.mock-laptop .lp-block.s{height:13px;width:80%}
+.mock-laptop .lp-block.m{height:13px;width:60%}
+.mock-laptop .lp-block.img-b{height:58px;background:rgba(255,255,255,.5)}
+.mock-laptop .laptop-base{background:#c8c8c8;height:10px;border-radius:0 0 6px 6px}
+.mock-laptop .laptop-stand{width:80px;height:6px;background:#b8b8b8;border-radius:0 0 4px 4px;margin:0 auto}
+
+/* Smartphone (B) */
+.mock-phone{
+  position:absolute;top:55px;right:15px;width:100px;
+  transform:rotate(4deg);z-index:3;
+  animation:fadeInUp .6s .15s ease both;
+  transition:transform .3s ease;
+}
+.mock-phone:hover{transform:rotate(4deg) translateY(-3px)}
+.mock-phone .phone-body{
+  background:#1a1a1a;border-radius:16px;
+  padding:8px 6px 12px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.mock-phone .phone-notch{width:28px;height:6px;background:#000;border-radius:3px;margin:0 auto 6px}
+.mock-phone .phone-screen{background:#fff;border-radius:8px;height:155px;padding:8px 6px;overflow:hidden}
+.mock-phone .sns-img{width:100%;height:68px;background:linear-gradient(135deg,#6b9e6b,#8FBF9A);border-radius:4px;margin-bottom:6px}
+.mock-phone .sns-line{height:7px;background:#e8e8e8;border-radius:3px;margin-bottom:4px}
+.mock-phone .sns-line.w70{width:70%}
+.mock-phone .sns-line.w50{width:50%}
+.mock-phone .phone-bar{width:32px;height:3px;background:#555;border-radius:2px;margin:4px auto 0}
+
+/* Flyer (C) */
+.mock-flyer{
+  position:absolute;bottom:55px;left:-15px;width:148px;
+  transform:rotate(-8deg);z-index:2;
+  animation:fadeInUp .6s .25s ease both;
+  transition:transform .3s ease;
+}
+.mock-flyer:hover{transform:rotate(-8deg) translateY(-3px)}
+.mock-flyer .flyer-body{
+  background:#fff;border-radius:4px;
+  box-shadow:0 6px 24px rgba(0,0,0,.14);
+  overflow:hidden;aspect-ratio:210/297;
+  display:flex;flex-direction:column;
+}
+.mock-flyer .flyer-top{background:#6b9e6b;height:35%;padding:10px;display:flex;align-items:center}
+.mock-flyer .flyer-top-txt{width:70%;height:8px;background:rgba(255,255,255,.8);border-radius:2px}
+.mock-flyer .flyer-inner{padding:10px;flex:1}
+.mock-flyer .flyer-line{height:7px;background:#e8e8e8;border-radius:3px;margin-bottom:6px}
+.mock-flyer .flyer-line.w90{width:90%}
+.mock-flyer .flyer-line.w70{width:70%}
+.mock-flyer .flyer-line.w55{width:55%}
+.mock-flyer .flyer-img-b{width:100%;height:38px;background:#f0f0f0;border-radius:3px;margin-top:8px}
+
+/* Business card (D) */
+.mock-card{
+  position:absolute;bottom:35px;right:5px;width:138px;
+  transform:rotate(6deg);z-index:4;
+  animation:fadeInUp .6s .3s ease both;
+  transition:transform .3s ease;
+}
+.mock-card:hover{transform:rotate(6deg) translateY(-3px)}
+.mock-card .card-body{
+  background:#fff;border-radius:4px;
+  box-shadow:0 4px 18px rgba(0,0,0,.14);
+  padding:10px 12px;
+  display:flex;gap:8px;align-items:stretch;
+  aspect-ratio:91/55;
+}
+.mock-card .card-accent{width:3px;background:#6b9e6b;border-radius:2px;flex-shrink:0}
+.mock-card .card-content{flex:1}
+.mock-card .card-logo{font-size:9px;font-weight:700;color:#2a3a2a;letter-spacing:.08em;margin-bottom:6px}
+.mock-card .card-line{height:5px;background:#e8e8e8;border-radius:2px;margin-bottom:4px}
+.mock-card .card-line.w80{width:80%}
+.mock-card .card-line.w60{width:60%}
+.mock-card .card-line.w70{width:70%}
+
+/* SNS Banner (E) */
+.mock-banner{
+  position:absolute;top:0;right:100px;width:128px;height:128px;
+  transform:rotate(3deg);z-index:2;
+  animation:fadeInUp .6s .1s ease both;
+  transition:transform .3s ease;
+}
+.mock-banner:hover{transform:rotate(3deg) translateY(-3px)}
+.mock-banner .banner-body{
+  width:100%;height:100%;
+  background:linear-gradient(135deg,#5e9a6e 0%,#8FBF9A 100%);
+  border-radius:12px;
+  box-shadow:0 8px 28px rgba(94,154,110,.4);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px;
+}
+.mock-banner .banner-txt{height:10px;background:rgba(255,255,255,.85);border-radius:3px;width:75%}
+.mock-banner .banner-txt.s{width:55%;height:8px}
+
+/* Floating labels */
+.float-label{
+  position:absolute;background:#fff;border-radius:8px;
+  box-shadow:0 4px 16px rgba(0,0,0,.12);
+  padding:6px 10px;font-size:11px;font-weight:600;color:#2a3a2a;
+  display:flex;align-items:center;gap:5px;white-space:nowrap;z-index:10;
+  animation:floatY 3.5s ease-in-out infinite;
+}
+.float-label.lbl-flyer{top:215px;left:-28px;animation-delay:0s;animation-duration:3.8s}
+.float-label.lbl-sns{top:-18px;right:38px;animation-delay:.5s;animation-duration:3.2s}
+.float-label.lbl-lp{top:28px;left:135px;animation-delay:1s;animation-duration:4s}
 
 /* couple silhouettes */
 .couple{
@@ -1330,56 +1412,68 @@ button{font:inherit}
     </div>
 
     <div class="hero-art" aria-hidden="true">
-      <div class="ring r1"></div>
-      <div class="ring r2"></div>
-      <div class="ring r3"></div>
-      <div class="blob"></div>
-
-      <div class="lines">
-        <svg viewBox="0 0 400 400" preserveAspectRatio="none">
-          <path d="M -20 60 Q 100 120 200 80 T 420 140" />
-          <path d="M -20 200 Q 120 260 220 220 T 420 280" />
-          <path d="M -20 340 Q 100 380 200 320 T 420 360" />
-        </svg>
+      <!-- A: MacBook -->
+      <div class="mock-laptop">
+        <div class="laptop-body">
+          <div class="laptop-screen">
+            <div class="lp-block hero-b"></div>
+            <div class="lp-block s"></div>
+            <div class="lp-block m"></div>
+            <div class="lp-block img-b"></div>
+            <div class="lp-block s"></div>
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+        <div class="laptop-stand"></div>
       </div>
-
-      <!-- feather -->
-      <svg class="feather" viewBox="0 0 100 220" fill="none">
-        <defs>
-          <linearGradient id="fg1" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#8FBF9A"/>
-            <stop offset="1" stop-color="#5E9A6E"/>
-          </linearGradient>
-        </defs>
-        <path d="M50 10 C 30 60, 10 130, 35 210 C 55 200, 60 180, 60 160 C 80 130, 92 90, 80 50 C 72 25, 60 12, 50 10 Z" fill="url(#fg1)" opacity=".95"/>
-        <path d="M50 18 L 38 200" stroke="#fff" stroke-width="1.4" opacity=".5"/>
-        <g stroke="#fff" stroke-width=".7" opacity=".55">
-          <path d="M44 50 C 54 48, 62 50, 68 56"/>
-          <path d="M40 80 C 52 76, 64 78, 72 86"/>
-          <path d="M37 110 C 50 105, 65 108, 74 118"/>
-          <path d="M35 140 C 50 134, 64 138, 72 150"/>
-          <path d="M34 170 C 47 164, 60 168, 66 180"/>
-        </g>
-      </svg>
-
-      <svg class="feather2" viewBox="0 0 100 220" fill="none">
-        <path d="M50 10 C 30 60, 10 130, 35 210 C 55 200, 60 180, 60 160 C 80 130, 92 90, 80 50 C 72 25, 60 12, 50 10 Z" fill="#F4E89B" opacity=".85"/>
-        <path d="M50 18 L 38 200" stroke="#fff" stroke-width="1.4" opacity=".5"/>
-      </svg>
-
-      <!-- floating tools -->
-      <div class="tool t1">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-        Pen
+      <!-- B: Smartphone -->
+      <div class="mock-phone">
+        <div class="phone-body">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="sns-img"></div>
+            <div class="sns-line"></div>
+            <div class="sns-line w70"></div>
+            <div class="sns-line w50"></div>
+          </div>
+          <div class="phone-bar"></div>
+        </div>
       </div>
-      <div class="tool t2">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        Camera
+      <!-- C: Flyer -->
+      <div class="mock-flyer">
+        <div class="flyer-body">
+          <div class="flyer-top"><div class="flyer-top-txt"></div></div>
+          <div class="flyer-inner">
+            <div class="flyer-line w90"></div>
+            <div class="flyer-line w70"></div>
+            <div class="flyer-line w55"></div>
+            <div class="flyer-img-b"></div>
+          </div>
+        </div>
       </div>
-      <div class="tool t3">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        Studio
+      <!-- D: Business card -->
+      <div class="mock-card">
+        <div class="card-body">
+          <div class="card-accent"></div>
+          <div class="card-content">
+            <div class="card-logo">tsumugu</div>
+            <div class="card-line w80"></div>
+            <div class="card-line w60"></div>
+            <div class="card-line w70"></div>
+          </div>
+        </div>
       </div>
+      <!-- E: SNS Banner -->
+      <div class="mock-banner">
+        <div class="banner-body">
+          <div class="banner-txt"></div>
+          <div class="banner-txt s"></div>
+        </div>
+      </div>
+      <!-- Floating labels -->
+      <div class="float-label lbl-flyer">🖨 チラシ</div>
+      <div class="float-label lbl-sns">📱 SNS素材</div>
+      <div class="float-label lbl-lp">🖥 LP制作</div>
     </div>
   </div>
 </section>
