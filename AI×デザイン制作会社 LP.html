@@ -352,6 +352,40 @@ button{font:inherit}
 }
 .hero-meta b{color:var(--terra-deep);font-weight:500}
 
+/* ─── hero fv target / pain ─── */
+.fv-target-label{
+  display:inline-block;
+  background:rgba(106,170,100,.15);
+  color:#3d7a38;
+  font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  padding:6px 18px;
+  border-radius:50px;
+  margin-bottom:20px;
+}
+.fv-pain-text{
+  font-family:'Zen Kaku Gothic New','Noto Sans JP',sans-serif;
+  font-size:15px;
+  font-weight:400;
+  color:rgba(255,255,255,.85);
+  line-height:2.0;
+  margin-bottom:24px;
+}
+.fv-pain-close{
+  display:block;
+  margin-top:10px;
+  font-size:16px;
+  font-weight:700;
+  color:#ffffff;
+}
+@media(max-width:768px){
+  .fv-target-label{font-size:12px;padding:5px 14px}
+  .fv-pain-text{font-size:14px}
+  .fv-pain-close{font-size:15px}
+}
+
 /* ─── hero image slideshow ─── */
 .hero-art{
   position:relative;
@@ -1437,6 +1471,15 @@ button{font:inherit}
 
   <div class="hero-grid">
     <div class="hero-text">
+      <div class="fv-target-label">
+        飲食店・サロン・個人事業主の方へ
+      </div>
+      <div class="fv-pain-text">
+        「忙しくてデザインに手が回らない」<br>
+        「素材がバラバラで一貫性がない」<br>
+        「続けようとしても、結局続かない」<br>
+        <span class="fv-pain-close">そんなあなたのデザインを、丸ごとお任せください。</span>
+      </div>
       <span class="eyebrow"><span class="dot"></span><span>Design Studio</span><span class="bar"></span><span>Kobe</span></span>
       <h1>
         丁寧に、素早く、<br/>
