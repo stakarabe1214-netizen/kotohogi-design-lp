@@ -29,7 +29,7 @@
 <meta name="twitter:creator" content="@tsumugu_design" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@500;700&family=Yomogi&family=Klee+One:wght@400;600&family=Caveat:wght@500;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <style>
 /* ─────────── tokens (botanical green, BOTANIST Baby–inspired) ─────────── */
@@ -58,11 +58,11 @@
   --r-md: 18px;
   --r-lg: 28px;
   --r-xl: 40px;
-  --font-jp: "Zen Kaku Gothic New", "Noto Sans JP", -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-  --font-mono: "DM Mono", ui-monospace, monospace;
-  --font-display: "Klee One", "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
-  --font-hand-jp: "Yomogi", "Klee One", "Zen Kaku Gothic New", sans-serif;
-  --font-hand-en: "Caveat", "Yomogi", cursive;
+  --font-jp: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-display: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  --font-hand-jp: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  --font-hand-en: "DM Mono", monospace;
 }
 
 /* theme: minimal — engaged via [data-theme="minimal"] on <html> */
@@ -84,13 +84,13 @@ html[data-theme="minimal"]{
 }
 
 /* font swap */
-html[data-font="mincho"]{ --font-display: "Shippori Mincho", "Yu Mincho", serif; }
+html[data-font="mincho"]{ --font-display: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif; }
 html[data-font="noto"]{
-  --font-jp: "Noto Sans JP", -apple-system, sans-serif;
+  --font-jp: "Noto Sans JP", sans-serif;
   --font-display: "Noto Sans JP", sans-serif;
 }
 html[data-font="hand"]{
-  --font-display: "Yomogi", "Klee One", "Zen Kaku Gothic New", sans-serif;
+  --font-display: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -673,7 +673,7 @@ button{font:inherit}
   border:1px solid rgba(107,158,107,.15);
   position:relative;
   transition:transform .35s cubic-bezier(.22,.68,0,1.2), box-shadow .35s ease;
-  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
 }
 .price:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(60,100,60,.13)}
 .price.feat{
@@ -698,7 +698,7 @@ button{font:inherit}
 .price.feat .price-cat{color:rgba(255,255,255,.7)}
 .price h3{
   font-size:1.15rem;margin:0 0 4px;font-weight:700;
-  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
   color:#2a3a2a;
 }
 .price.feat h3{color:#fff}
@@ -731,7 +731,7 @@ button{font:inherit}
 .price.feat li::before{border-color:#e8c66a}
 .price-note{
   margin-top:36px;font-size:12.5px;color:#7a8e7a;line-height:2;
-  font-family:"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
 }
 
 /* ─────────── small-lot printing ─────────── */
