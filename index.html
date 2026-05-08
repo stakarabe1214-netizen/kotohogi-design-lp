@@ -538,30 +538,40 @@ button{font:inherit}
 @media (max-width: 520px){ .svc-grid{grid-template-columns:1fr} }
 
 .svc{
-  background:#fff;border-radius:var(--r-md);padding:44px 36px;
-  border:.5px solid var(--line);
+  background:#fff;border-radius:16px;padding:0;
+  border:none;
   position:relative;overflow:hidden;
   transition:transform .3s ease, box-shadow .3s ease;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
   cursor:default;
 }
-.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.svc:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,0.14)}
+.svc-header{
+  height:140px;
+  background:linear-gradient(135deg,#6aaa64 0%,#4a8a44 100%);
+  position:relative;display:flex;align-items:center;justify-content:center;
+  padding:16px;
+}
 .svc .tag{
-  display:inline-block;
+  position:absolute;top:12px;left:12px;
   font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;
-  color:var(--terra-deep);text-transform:uppercase;
-  background:var(--cream-deep);border:1px solid var(--line-warm);
+  color:#fff;text-transform:uppercase;
+  background:rgba(255,255,255,0.2);
   border-radius:20px;padding:4px 12px;
+  display:inline-block;border:none;
 }
 .svc .ico{
-  width:80px;height:80px;border-radius:22px;
-  background:linear-gradient(140deg,var(--cream),#fff);
-  color:var(--terra);display:grid;place-items:center;margin:18px 0 28px;
-  box-shadow:inset 0 0 0 .5px var(--line-warm);
+  width:80px;height:80px;border-radius:0;
+  background:none;
+  color:#fff;display:grid;place-items:center;margin:0;
+  box-shadow:none;
   transition:transform .5s cubic-bezier(.2,.8,.2,1);
 }
 .svc:hover .ico{transform:rotate(-6deg) scale(1.05)}
 .svc .ico svg{width:40px;height:40px}
-.svc h3{font-size:1.35rem;margin:0 0 10px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:800}
+.svc-body{padding:28px;}
+.svc h3{font-size:20px;margin:0 0 10px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:700;color:var(--ink)}
+.svc p{margin:0 0 24px;color:#666;font-size:14px;line-height:1.85}
 .svc p{margin:0 0 24px;color:var(--ink);font-size:14.5px;line-height:1.85}
 .svc .more{
   display:inline-flex;align-items:center;gap:8px;
@@ -1507,51 +1517,75 @@ button{font:inherit}
 
     <div class="svc-grid">
       <article class="svc reveal">
-        <span class="tag">01 / Print</span>
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div>
-        <h3>ポスター・チラシ制作</h3>
-        <p>集客に効く、伝わるデザインを。手にとって、思わず読みたくなる紙面づくりを。</p>
-        <span class="more" id="cta-poster" role="button" tabindex="0" style="cursor:pointer">見積もり・納期の相談 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="svc-header">
+          <span class="tag">01 / Print</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div>
+        </div>
+        <div class="svc-body">
+          <h3>ポスター・チラシ制作</h3>
+          <p>集客に効く、伝わるデザインを。手にとって、思わず読みたくなる紙面づくりを。</p>
+          <span class="more" id="cta-poster" role="button" tabindex="0" style="cursor:pointer">見積もり・納期の相談 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
       </article>
 
       <article class="svc reveal d2">
-        <span class="tag">02 / Social</span>
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
-        <h3>SNS運用素材制作</h3>
-        <p>日々の投稿を魅力的に。続けやすいテンプレートと、目を引くキービジュアルを。</p>
-        <span class="more" id="cta-sns" role="button" tabindex="0" style="cursor:pointer">テンプレ運用も対応 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="svc-header">
+          <span class="tag">02 / Social</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        </div>
+        <div class="svc-body">
+          <h3>SNS運用素材制作</h3>
+          <p>日々の投稿を魅力的に。続けやすいテンプレートと、目を引くキービジュアルを。</p>
+          <span class="more" id="cta-sns" role="button" tabindex="0" style="cursor:pointer">テンプレ運用も対応 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
       </article>
 
       <article class="svc reveal d3">
-        <span class="tag">03 / Web</span>
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg></div>
-        <h3>LP制作</h3>
-        <p>成果につながるランディングページ。読み終わった頃には、自然と問い合わせたくなる導線を。</p>
-        <a class="more" href="/lp-flow.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">設計から構築まで <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <div class="svc-header">
+          <span class="tag">03 / Web</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10 15 15 0 0 1 4-10z"/></svg></div>
+        </div>
+        <div class="svc-body">
+          <h3>LP制作</h3>
+          <p>成果につながるランディングページ。読み終わった頃には、自然と問い合わせたくなる導線を。</p>
+          <a class="more" href="/lp-flow.html" target="_blank" rel="noopener noreferrer" style="text-decoration:none">設計から構築まで <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </article>
 
       <article class="svc reveal">
-        <span class="tag">04 / Brand</span>
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5L20 8.5l-3.8 3.7.9 5.3L12 15l-5.1 2.5.9-5.3L4 8.5 9.5 7z"/></svg></div>
-        <h3>ブランディング支援</h3>
-        <p>ロゴ・名刺・会社案内など。お店や会社の"らしさ"を一貫した世界観で整えます。</p>
-        <span class="more" id="cta-branding" role="button" tabindex="0" style="cursor:pointer">ロゴ・名刺・案内書 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="svc-header">
+          <span class="tag">04 / Brand</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5L20 8.5l-3.8 3.7.9 5.3L12 15l-5.1 2.5.9-5.3L4 8.5 9.5 7z"/></svg></div>
+        </div>
+        <div class="svc-body">
+          <h3>ブランディング支援</h3>
+          <p>ロゴ・名刺・会社案内など。お店や会社の"らしさ"を一貫した世界観で整えます。</p>
+          <span class="more" id="cta-branding" role="button" tabindex="0" style="cursor:pointer">ロゴ・名刺・案内書 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
       </article>
 
       <article class="svc reveal d2">
-        <span class="tag">05 / Photo</span>
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
-        <h3>メニュー・商品撮影</h3>
-        <p>プロ品質の撮影で商品の魅力を最大化。思わず手に取りたくなる一枚を、デザインと一緒に。</p>
-        <span class="more" id="cta-photo" role="button" tabindex="0" style="cursor:pointer">店舗撮影対応 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="svc-header">
+          <span class="tag">05 / Photo</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        </div>
+        <div class="svc-body">
+          <h3>メニュー・商品撮影</h3>
+          <p>プロ品質の撮影で商品の魅力を最大化。思わず手に取りたくなる一枚を、デザインと一緒に。</p>
+          <span class="more" id="cta-photo" role="button" tabindex="0" style="cursor:pointer">店舗撮影対応 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
       </article>
 
       <article class="svc reveal d3">
-        <span class="tag">06 / AI</span>
-        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-        <h3>AI活用サポート</h3>
-        <p>ChatGPT・動画編集AIなど、すぐ使えるAIツールの活用法を一緒に学びながら業務を楽にします。小さく試して、続けられる形を作ります。</p>
-        <span class="more" id="cta-ai" role="button" tabindex="0" style="cursor:pointer">まずは相談してみる <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="svc-header">
+          <span class="tag">06 / AI</span>
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        </div>
+        <div class="svc-body">
+          <h3>AI活用サポート</h3>
+          <p>ChatGPT・動画編集AIなど、すぐ使えるAIツールの活用法を一緒に学びながら業務を楽にします。小さく試して、続けられる形を作ります。</p>
+          <span class="more" id="cta-ai" role="button" tabindex="0" style="cursor:pointer">まずは相談してみる <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
       </article>
     </div>
   </div>
