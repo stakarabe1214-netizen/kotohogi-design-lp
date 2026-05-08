@@ -278,11 +278,11 @@ button{font:inherit}
 
 .hero h1{
   font-family:var(--font-jp);
-  font-weight:900;
+  font-weight:700;
   font-size:clamp(2.1rem, 5.2vw, 3.6rem);
-  line-height:1.5;
-  letter-spacing:.03em;
-  margin:24px 0 28px;
+  line-height:1.3;
+  letter-spacing:-0.01em;
+  margin:24px 0 20px;
   color:var(--ink);
 }
 .hero h1 .accent{
@@ -385,6 +385,39 @@ button{font:inherit}
   .fv-pain-text{display:none}
   .fv-pain-close{display:none}
 }
+
+/* ─── hero badges ─── */
+.hero-badges{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin:0 0 24px;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;
+  font-size:12px;font-weight:600;
+  color:var(--terra-deep);
+  background:rgba(143,191,154,.14);
+  border:1px solid rgba(143,191,154,.38);
+  padding:4px 12px;border-radius:50px;
+  letter-spacing:.04em;
+  font-family:var(--font-jp);
+}
+@media(max-width:480px){
+  .hero-badges{gap:6px}
+  .hero-badge{font-size:11px;padding:3px 10px}
+}
+
+/* ─── hero visual column ─── */
+.hero-visual{display:flex;flex-direction:column;align-items:flex-end}
+.slide-caption{
+  font-size:11px;
+  font-family:var(--font-mono);
+  color:var(--ink-faint);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin:0 0 8px;
+  align-self:flex-end;
+}
+@media(max-width:768px){.slide-caption{display:none}}
 
 /* ─── hero image slideshow ─── */
 .hero-art{
@@ -1482,10 +1515,14 @@ button{font:inherit}
       </div>
       <span class="eyebrow"><span class="dot"></span><span>Design Studio</span><span class="bar"></span><span>Kobe</span></span>
       <h1>
-        丁寧に、素早く、<br/>
-        伝わる<span class="accent">販促物</span>を<br/>
-        もっと早く、<br/>もっと身近に。
+        デザインを、<br/>
+        丸ごとお<span class="accent">任せ</span>ください。
       </h1>
+      <div class="hero-badges">
+        <span class="hero-badge">夫婦チーム</span>
+        <span class="hero-badge">温浴・飲食業界の現場経験あり</span>
+        <span class="hero-badge">神戸拠点・全国対応</span>
+      </div>
       <div class="hero-new-ctas">
         <a class="cta-primary" href="#contact">無料で相談する</a>
         <a class="cta-outline" href="#pricing">料金を見てみる</a>
@@ -1514,22 +1551,25 @@ button{font:inherit}
       </div>
     </div>
 
-    <div class="hero-art">
-      <div class="hero-slide">
-        <img src="public/images/slide-01.jpg" alt="チラシ制作">
-        <span class="slide-label">🖨 チラシ制作</span>
-      </div>
-      <div class="hero-slide">
-        <img src="public/images/slide-02.jpg" alt="SNS素材">
-        <span class="slide-label">📱 SNS素材</span>
-      </div>
-      <div class="hero-slide">
-        <img src="public/images/slide-03.jpg" alt="撮影">
-        <span class="slide-label">📷 撮影</span>
-      </div>
-      <div class="hero-slide">
-        <img src="public/images/slide-04.jpg" alt="LP制作">
-        <span class="slide-label">🖥 LP制作</span>
+    <div class="hero-visual">
+      <p class="slide-caption">制作実績の一部</p>
+      <div class="hero-art">
+        <div class="hero-slide">
+          <img src="public/images/slide-01.jpg" alt="チラシ制作">
+          <span class="slide-label">🖨 チラシ制作</span>
+        </div>
+        <div class="hero-slide">
+          <img src="public/images/slide-02.jpg" alt="SNS素材">
+          <span class="slide-label">📱 SNS素材</span>
+        </div>
+        <div class="hero-slide">
+          <img src="public/images/slide-03.jpg" alt="撮影">
+          <span class="slide-label">📷 撮影</span>
+        </div>
+        <div class="hero-slide">
+          <img src="public/images/slide-04.jpg" alt="LP制作">
+          <span class="slide-label">🖥 LP制作</span>
+        </div>
       </div>
     </div>
   </div>
