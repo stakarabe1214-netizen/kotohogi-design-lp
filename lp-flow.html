@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LP制作の流れ｜設計から構築まで</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+      background: #fafaf8;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(135deg, #e8f0e8 0%, #f0f5f0 100%);
+      text-align: center;
+      padding: 80px 20px;
+      border-bottom: 1px solid #d8e8d8;
+    }
+    .hero .label {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #a8c5a0;
+      border-radius: 20px;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: #6aaa64;
+      font-weight: 700;
+      padding: 6px 20px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(24px, 4vw, 42px);
+      font-weight: 700;
+      line-height: 1.5;
+      color: #2d5a27;
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      color: #6aaa64;
+    }
+    .hero p {
+      font-size: 15px;
+      color: #666;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.9;
+    }
+    .hero .cta-btn {
+      display: inline-block;
+      background: #6aaa64;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(106,170,100,0.3);
+    }
+    .hero .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(106,170,100,0.4);
+    }
+
+    /* ========== SECTION BASE ========== */
+    .section {
+      padding: 72px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      color: #6aaa64;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 700;
+      color: #2d5a27;
+      margin-bottom: 12px;
+    }
+    .section-sub {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 52px;
+      line-height: 1.9;
+    }
+
+    /* ========== FLOW STEPS ========== */
+    .flow-wrap {
+      position: relative;
+    }
+    .flow-wrap::before {
+      content: '';
+      position: absolute;
+      left: 36px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #a8d5a2, #d8ead8);
+    }
+    .flow-item {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .flow-num {
+      width: 72px;
+      height: 72px;
+      min-width: 72px;
+      border-radius: 50%;
+      background: #fff;
+      border: 3px solid #6aaa64;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #6aaa64;
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      z-index: 1;
+      box-shadow: 0 2px 12px rgba(106,170,100,0.15);
+    }
+    .flow-num .num {
+      font-size: 22px;
+      line-height: 1;
+    }
+    .flow-body {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 32px;
+      flex: 1;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      border: 1px solid #e8f0e8;
+    }
+    .flow-body .step-tag {
+      display: inline-block;
+      background: #e8f5e8;
+      color: #6aaa64;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .flow-body h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2d5a27;
+      margin-bottom: 10px;
+    }
+    .flow-body p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+    .flow-body .period {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f5faf5;
+      border: 1px solid #c8e0c8;
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 13px;
+      color: #6aaa64;
+      font-weight: 600;
+    }
+
+    /* ========== PREPARE SECTION ========== */
+    .prepare-section {
+      background: #f0f5f0;
+      padding: 72px 20px;
+    }
+    .prepare-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .prepare-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .prepare-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      border: 1px solid #d8ead8;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .prepare-card .p-icon {
+      width: 48px;
+      height: 48px;
+      background: #e8f5e8;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .prepare-card h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #2d5a27;
+      margin-bottom: 8px;
+    }
+    .prepare-card p {
+      font-size: 13px;
+      color: #777;
+      line-height: 1.8;
+    }
+    .prepare-card .p-required {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .required { background: #ffe8e8; color: #e05555; }
+    .optional  { background: #e8f0ff; color: #5577e0; }
+
+    /* ========== FAQ ========== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid #e0ece0;
+      overflow: hidden;
+    }
+    .faq-q {
+      padding: 20px 24px;
+      font-weight: 700;
+      font-size: 15px;
+      color: #2d5a27;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .faq-q .q-mark {
+      color: #6aaa64;
+      font-size: 18px;
+      font-weight: 900;
+      min-width: 20px;
+    }
+    .faq-a {
+      padding: 0 24px 20px 56px;
+      font-size: 14px;
+      color: #666;
+      line-height: 1.9;
+    }
+
+    /* ========== FINAL CTA ========== */
+    .final-cta {
+      background: linear-gradient(135deg, #6aaa64 0%, #4a8a44 100%);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .final-cta h2 {
+      font-size: clamp(20px, 3vw, 32px);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+    .final-cta p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 36px;
+      line-height: 1.9;
+    }
+    .final-cta .cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: #6aaa64;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 18px 48px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      transition: transform 0.2s;
+    }
+    .final-cta .cta-btn:hover { transform: translateY(-2px); }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 600px) {
+      .flow-wrap::before { left: 28px; }
+      .flow-num { width: 56px; height: 56px; min-width: 56px; }
+      .flow-num .num { font-size: 18px; }
+      .flow-body { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="label">✦ LP PRODUCTION FLOW</div>
+    <h1>LP制作、<span>どんな流れで</span><br>進むのか知りたい方へ。</h1>
+    <p>「何を準備すればいい？」「どのくらいかかる？」<br>よくある疑問にお答えしながら、<br>制作の全体像をご説明します。</p>
+    <a href="#flow" class="cta-btn">▼ 流れを見る</a>
+  </div>
+
+  <!-- FLOW -->
+  <div class="section" id="flow">
+    <p class="section-label">STEP FLOW</p>
+    <h2 class="section-title">ご依頼から納品までの流れ</h2>
+    <p class="section-sub">お問い合わせから納品まで、<br>丁寧にサポートしますのでご安心ください。</p>
+
+    <div class="flow-wrap">
+
+      <div class="flow-item">
+        <div class="flow-num"><span>STEP</span><span class="num">01</span></div>
+        <div class="flow-body">
+          <span class="step-tag">お問い合わせ</span>
+          <h3>まずはお気軽にご相談ください</h3>
+          <p>フォームからお問い合わせいただきます。この時点では詳細が決まっていなくても大丈夫です。「こんなサービスのLPを作りたい」という段階でもお気軽にどうぞ。</p>
+          <span class="period">⏱ 所要時間：5分程度</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span>STEP</span><span class="num">02</span></div>
+        <div class="flow-body">
+          <span class="step-tag">ヒアリング</span>
+          <h3>サービスの内容・ターゲットをお聞きします</h3>
+          <p>オンラインまたはメールにて、以下の内容を確認させていただきます。サービスの概要・ターゲットとなるお客様・競合他社・ご予算・納期の希望など、丁寧にヒアリングします。</p>
+          <span class="period">⏱ 目安：1〜3営業日</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span>STEP</span><span class="num">03</span></div>
+        <div class="flow-body">
+          <span class="step-tag">構成・設計</span>
+          <h3>LP全体の構成・文章をご提案します</h3>
+          <p>ヒアリング内容をもとに、LPの構成案（ワイヤーフレーム）とキャッチコピー・本文テキストをご提案します。「どんな順番でお客様に読んでもらうか」を設計する最も重要なフェーズです。</p>
+          <span class="period">⏱ 目安：3〜5営業日</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span>STEP</span><span class="num">04</span></div>
+        <div class="flow-body">
+          <span class="step-tag">デザイン制作</span>
+          <h3>承認いただいた構成をもとにデザインします</h3>
+          <p>構成にOKをいただいた後、実際のビジュアルデザインに入ります。ブランドカラー・フォント・画像などを組み合わせて、魅力的なLPに仕上げます。修正は2回まで無料で対応します。</p>
+          <span class="period">⏱ 目安：5〜7営業日</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span>STEP</span><span class="num">05</span></div>
+        <div class="flow-body">
+          <span class="step-tag">コーディング・構築</span>
+          <h3>デザインをWebページとして構築します</h3>
+          <p>デザインをHTML/CSSでコーディングし、実際にブラウザで動くページとして仕上げます。スマホ対応（レスポンシブ）も標準で対応しています。</p>
+          <span class="period">⏱ 目安：3〜5営業日</span>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-num"><span>STEP</span><span class="num">06</span></div>
+        <div class="flow-body">
+          <span class="step-tag">納品・公開</span>
+          <h3>確認・修正後に納品・公開します</h3>
+          <p>最終確認をしていただき、問題なければ納品・公開となります。公開後も1週間は微調整のサポートをいたします。安心してお任せください。</p>
+          <span class="period">⏱ 目安：1〜2営業日</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PREPARE -->
+  <div class="prepare-section">
+    <div class="prepare-inner">
+      <p class="section-label">PREPARATION</p>
+      <h2 class="section-title">ご依頼前に準備しておくと<br>スムーズなもの</h2>
+      <p class="section-sub">必須ではないものもありますが、<br>事前にご用意いただくと制作がスムーズに進みます。</p>
+
+      <div class="prepare-grid">
+
+        <div class="prepare-card">
+          <div class="p-icon">📋</div>
+          <span class="p-required required">必須</span>
+          <h4>サービス・商品の概要</h4>
+          <p>何を提供するサービスか、どんな悩みを解決するのかを簡単にまとめたメモで構いません。</p>
+        </div>
+
+        <div class="prepare-card">
+          <div class="p-icon">👤</div>
+          <span class="p-required required">必須</span>
+          <h4>ターゲットのイメージ</h4>
+          <p>「30代女性・主婦・美容に関心がある」など、届けたいお客様のイメージを教えてください。</p>
+        </div>
+
+        <div class="prepare-card">
+          <div class="p-icon">🎨</div>
+          <span class="p-required optional">あると良い</span>
+          <h4>好みのデザインイメージ</h4>
+          <p>「こんな雰囲気にしたい」と思うWebサイトのURLや、PinterestのURLなどがあると参考になります。</p>
+        </div>
+
+        <div class="prepare-card">
+          <div class="p-icon">🖼</div>
+          <span class="p-required optional">あると良い</span>
+          <h4>使用したい写真・画像</h4>
+          <p>商品写真やプロフィール写真などがあれば共有ください。ない場合はフリー素材で対応可能です。</p>
+        </div>
+
+        <div class="prepare-card">
+          <div class="p-icon">🏷</div>
+          <span class="p-required optional">あると良い</span>
+          <h4>ロゴ・ブランドカラー</h4>
+          <p>すでにロゴやブランドカラーがある場合はご共有ください。ない場合はご相談の上決めていきます。</p>
+        </div>
+
+        <div class="prepare-card">
+          <div class="p-icon">📅</div>
+          <span class="p-required required">必須</span>
+          <h4>希望の納期・予算感</h4>
+          <p>「〇月までに公開したい」「予算は〇万円ほど」など、おおまかで構いません。最初にお聞かせください。</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <p class="section-label">FAQ</p>
+    <h2 class="section-title">よくある質問</h2>
+    <p class="section-sub">LP制作のご依頼前によく寄せられる質問をまとめました。</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span>文章（コピー）は自分で用意する必要がありますか？</div>
+        <div class="faq-a">いいえ、不要です。ヒアリングをもとにキャッチコピーから本文まですべてご提案します。「文章が苦手」な方でも安心してお任せください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span>完成後に自分で内容を修正できますか？</div>
+        <div class="faq-a">はい、可能です。WordPressでの構築をご希望の場合、納品後にご自身でテキストや画像を更新できます。操作方法もご説明します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span>スマートフォンでも正しく表示されますか？</div>
+        <div class="faq-a">はい、全プランでスマホ対応（レスポンシブデザイン）を標準で対応しています。スマホ・タブレット・PCすべてで最適に表示されます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><span class="q-mark">Q</span>途中でデザインの方向性を変えることはできますか？</div>
+        <div class="faq-a">構成・設計の承認前であれば変更可能です。デザイン着手後の大幅な変更は追加費用が発生する場合がありますので、最初のヒアリングで丁寧にすり合わせを行います。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINAL CTA -->
+  <div class="final-cta">
+    <h2>まずは無料相談から<br>はじめてみませんか？</h2>
+    <p>準備が整っていなくても大丈夫です。<br>「こんなLP作りたい」という気持ちだけで十分です。</p>
+    <a href="/#contact" class="cta-btn">📩 無料で相談してみる</a>
+  </div>
+
+</body>
+</html>
