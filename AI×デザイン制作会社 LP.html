@@ -1539,8 +1539,8 @@ button{font:inherit}
         <span class="tag">05 / Photo</span>
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
         <h3>メニュー・商品撮影</h3>
-        <p>プロ品質の撮影で商品の魅力を最大化。シズル感のある一枚を、デザインと一緒に。</p>
-        <span class="more">店舗・スタジオ両対応 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <p>プロ品質の撮影で商品の魅力を最大化。思わず手に取りたくなる一枚を、デザインと一緒に。</p>
+        <span class="more" id="cta-photo" role="button" tabindex="0" style="cursor:pointer">店舗撮影対応 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </article>
 
       <article class="svc reveal d3">
@@ -2176,6 +2176,17 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   function activate(){
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});
     document.getElementById('message').value = 'ブランディング支援（ロゴ・名刺・案内書）について相談したいです。';
+    setTimeout(function(){ document.getElementById('name').focus(); }, 600);
+  }
+  btn.addEventListener('click', activate);
+  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') activate(); });
+})();
+(function(){
+  var btn = document.getElementById('cta-photo');
+  if(!btn) return;
+  function activate(){
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    document.getElementById('message').value = 'メニュー・商品撮影（店舗撮影）について相談したいです。';
     setTimeout(function(){ document.getElementById('name').focus(); }, 600);
   }
   btn.addEventListener('click', activate);
