@@ -538,27 +538,30 @@ button{font:inherit}
 @media (max-width: 520px){ .svc-grid{grid-template-columns:1fr} }
 
 .svc{
-  background:#fff;border-radius:var(--r-md);padding:36px 30px;
+  background:#fff;border-radius:var(--r-md);padding:44px 36px;
   border:.5px solid var(--line);
   position:relative;overflow:hidden;
-  transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
+  transition:transform .3s ease, box-shadow .3s ease;
   cursor:default;
 }
-.svc:hover{transform:translateY(-6px) scale(1.01);box-shadow:var(--shadow-md)}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
 .svc .tag{
-  font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--ink-faint);
-  text-transform:uppercase;
+  display:inline-block;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;
+  color:var(--terra-deep);text-transform:uppercase;
+  background:var(--cream-deep);border:1px solid var(--line-warm);
+  border-radius:20px;padding:4px 12px;
 }
 .svc .ico{
-  width:64px;height:64px;border-radius:18px;
+  width:80px;height:80px;border-radius:22px;
   background:linear-gradient(140deg,var(--cream),#fff);
-  color:var(--terra);display:grid;place-items:center;margin:14px 0 24px;
+  color:var(--terra);display:grid;place-items:center;margin:18px 0 28px;
   box-shadow:inset 0 0 0 .5px var(--line-warm);
   transition:transform .5s cubic-bezier(.2,.8,.2,1);
 }
 .svc:hover .ico{transform:rotate(-6deg) scale(1.05)}
-.svc .ico svg{width:32px;height:32px}
-.svc h3{font-size:1.2rem;margin:0 0 10px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:700}
+.svc .ico svg{width:40px;height:40px}
+.svc h3{font-size:1.35rem;margin:0 0 10px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:800}
 .svc p{margin:0 0 24px;color:var(--ink);font-size:14.5px;line-height:1.85}
 .svc .more{
   display:inline-flex;align-items:center;gap:8px;
