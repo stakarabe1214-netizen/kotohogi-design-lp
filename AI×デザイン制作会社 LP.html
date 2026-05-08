@@ -303,6 +303,45 @@ button{font:inherit}
 }
 .hero-ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
 
+/* ─── hero new CTAs ─── */
+.hero-new-ctas{
+  display:flex;gap:16px;flex-wrap:wrap;
+  margin-top:32px;
+}
+.cta-primary{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:18px 48px;
+  background:#6aaa64;color:#ffffff;
+  border-radius:50px;
+  font-family:var(--font-jp);font-size:16px;font-weight:700;
+  text-decoration:none;letter-spacing:.04em;
+  box-shadow:0 4px 20px rgba(106,170,100,.4);
+  transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+}
+.cta-primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 32px rgba(106,170,100,.5);
+}
+.cta-primary:active{transform:translateY(0)}
+.cta-outline{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:18px 48px;
+  background:transparent;color:#6aaa64;
+  border:2px solid #6aaa64;border-radius:50px;
+  font-family:var(--font-jp);font-size:16px;font-weight:700;
+  text-decoration:none;letter-spacing:.04em;
+  transition:background .25s, transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.cta-outline:hover{
+  background:rgba(106,170,100,.08);
+  transform:translateY(-2px);
+}
+.cta-outline:active{transform:translateY(0)}
+@media(max-width:600px){
+  .hero-new-ctas{flex-direction:column;gap:12px}
+  .cta-primary,.cta-outline{width:100%}
+}
+
 /* hero stats / micro */
 .hero-meta{
   display:flex;gap:28px;margin-top:56px;padding-top:28px;
@@ -1365,6 +1404,10 @@ button{font:inherit}
         伝わる<span class="accent">販促物</span>を<br/>
         もっと早く、<br/>もっと身近に。
       </h1>
+      <div class="hero-new-ctas">
+        <a class="cta-primary" href="#contact">無料で相談する</a>
+        <a class="cta-outline" href="#pricing">料金を見てみる</a>
+      </div>
       <p class="sub">
         スピード感と、デザイナーの丁寧な仕上がり。<br/>
         チラシ・SNS・LP・撮影・ブランディングまで<br/>
