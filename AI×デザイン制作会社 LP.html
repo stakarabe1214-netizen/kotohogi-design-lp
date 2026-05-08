@@ -1532,7 +1532,7 @@ button{font:inherit}
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5L20 8.5l-3.8 3.7.9 5.3L12 15l-5.1 2.5.9-5.3L4 8.5 9.5 7z"/></svg></div>
         <h3>ブランディング支援</h3>
         <p>ロゴ・名刺・会社案内など。お店や会社の"らしさ"を一貫した世界観で整えます。</p>
-        <span class="more">ロゴ・名刺・案内書 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="more" id="cta-branding" role="button" tabindex="0" style="cursor:pointer">ロゴ・名刺・案内書 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </article>
 
       <article class="svc reveal d2">
@@ -2164,6 +2164,17 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   function activate(){
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});
     document.getElementById('message').value = 'SNS運用素材制作・テンプレートについて相談したいです。';
+    setTimeout(function(){ document.getElementById('name').focus(); }, 600);
+  }
+  btn.addEventListener('click', activate);
+  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') activate(); });
+})();
+(function(){
+  var btn = document.getElementById('cta-branding');
+  if(!btn) return;
+  function activate(){
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    document.getElementById('message').value = 'ブランディング支援（ロゴ・名刺・案内書）について相談したいです。';
     setTimeout(function(){ document.getElementById('name').focus(); }, 600);
   }
   btn.addEventListener('click', activate);
