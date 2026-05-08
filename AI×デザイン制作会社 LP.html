@@ -122,12 +122,12 @@ button{font:inherit}
   font-family:var(--font-hand-en);
   font-size:16px;  /* 18px → 16px */
   letter-spacing:.08em;  /* .05em → .08em */
-  color:var(--terra-deep);
+  color:#3d7a38;
   font-weight:700;
   text-transform:uppercase;
-  opacity:.85;
+  opacity:.9;
 }
-.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:var(--terra);box-shadow:0 0 0 4px rgba(94,154,110,.15)}
+.eyebrow .dot{width:5px;height:5px;border-radius:50%;background:#3d7a38;box-shadow:0 0 0 4px rgba(61,122,56,.18)}
 .eyebrow .bar{width:28px;height:1px;background:currentColor;opacity:.4}
 
 /* section heading */
@@ -143,7 +143,7 @@ button{font:inherit}
 }
 .h-display em{
   font-style:normal;
-  color:var(--terra-deep);
+  color:#3d7a38;
   position:relative;
   font-family:inherit;
   font-weight:inherit;
@@ -171,20 +171,20 @@ button{font:inherit}
 .btn{
   display:inline-flex;align-items:center;gap:14px;
   padding:18px 32px;
-  background:var(--terra-deep);color:#fff;
+  background:#3d7a38;color:#fff;
   border:0;border-radius:999px;
   font-family:var(--font-jp);
   font-weight:700;font-size:17px;letter-spacing:.08em;
   cursor:pointer;
-  box-shadow:0 8px 24px rgba(94,154,110,.38), inset 0 1px 0 rgba(255,255,255,.2);
-  transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, background .25s;
+  box-shadow:0 4px 20px rgba(61,122,56,.4), inset 0 1px 0 rgba(255,255,255,.2);
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease;
   position:relative;overflow:hidden;
 }
 .btn:hover{
-  background:var(--ink);
-  transform:translateY(-3px) scale(1.02);
-  box-shadow:0 20px 40px rgba(94,154,110,.55), inset 0 1px 0 rgba(255,255,255,.2);
-  transition:all .35s cubic-bezier(.2,.8,.2,1);
+  background:#2d5f2a;
+  transform:translateY(-2px);
+  box-shadow:0 10px 32px rgba(61,122,56,.5), inset 0 1px 0 rgba(255,255,255,.2);
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease;
 }
 .btn:active{transform:translateY(0)}
 .btn .arr{
@@ -311,16 +311,17 @@ button{font:inherit}
 .cta-primary{
   display:inline-flex;align-items:center;justify-content:center;
   padding:18px 48px;
-  background:#6aaa64;color:#ffffff;
+  background:#3d7a38;color:#ffffff;
   border-radius:50px;
   font-family:var(--font-jp);font-size:16px;font-weight:700;
   text-decoration:none;letter-spacing:.04em;
-  box-shadow:0 4px 20px rgba(106,170,100,.4);
-  transition:transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s;
+  box-shadow:0 4px 20px rgba(61,122,56,.4);
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease;
 }
 .cta-primary:hover{
+  background:#2d5f2a;
   transform:translateY(-2px);
-  box-shadow:0 8px 32px rgba(106,170,100,.5);
+  box-shadow:0 10px 32px rgba(61,122,56,.5);
 }
 .cta-primary:active{transform:translateY(0)}
 .cta-outline{
@@ -683,10 +684,13 @@ button{font:inherit}
 .price.feat:hover{box-shadow:0 20px 56px rgba(60,120,60,.35)}
 .price .price-badge{
   position:absolute;top:-12px;left:24px;
-  background:#e8c66a;color:#3a3a2a;
-  font-size:11px;font-weight:700;letter-spacing:.12em;
-  padding:4px 14px;border-radius:999px;
+  font-size:12px;font-weight:700;letter-spacing:.08em;
+  padding:4px 14px;border-radius:20px;
+  color:#ffffff;
+  background:#3d7a38;
 }
+.price .price-badge.badge-popular{background:#e05555}
+.price .price-badge.badge-new{background:#e07830}
 .price .price-cat{
   font-size:11px;letter-spacing:.2em;font-weight:500;
   color:#9ab89a;text-transform:uppercase;margin-bottom:10px;
@@ -1135,13 +1139,14 @@ button{font:inherit}
 .btn-submit{
   width:100%;
   padding:18px 24px;
-  background:var(--ink);color:#fff;
+  background:#3d7a38;color:#fff;
   border:0;border-radius:12px;font-weight:700;font-size:15px;letter-spacing:.08em;
   cursor:default;
   display:flex;align-items:center;justify-content:center;gap:14px;
-  transition:background .25s, transform .25s;
+  box-shadow:0 4px 20px rgba(61,122,56,.4);
+  transition:background .3s ease, transform .3s ease;
 }
-.btn-submit:hover{background:var(--terra)}
+.btn-submit:hover{background:#2d5f2a;transform:translateY(-2px)}
 .form-disabled-note{
   font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;color:var(--ink-faint);
   text-align:center;margin-top:12px;text-transform:uppercase;
@@ -1190,16 +1195,16 @@ button{font:inherit}
 /* Floating CTA */
 .floating-cta{
   position:fixed;right:24px;bottom:24px;z-index:50;
-  background:var(--terra);color:#fff;
+  background:#3d7a38;color:#fff;
   padding:14px 22px;border-radius:999px;
   font-size:13px;font-weight:700;letter-spacing:.05em;
-  box-shadow:0 12px 30px rgba(94,154,110,.4), inset 0 1px 0 rgba(255,255,255,.2);
+  box-shadow:0 4px 20px rgba(61,122,56,.4), inset 0 1px 0 rgba(255,255,255,.2);
   display:flex;align-items:center;gap:10px;
   opacity:0;transform:translateY(20px);pointer-events:none;
-  transition:opacity .4s, transform .4s, background .25s;
+  transition:opacity .4s, transform .4s, background .3s ease;
 }
 .floating-cta.show{opacity:1;transform:none;pointer-events:auto}
-.floating-cta:hover{background:var(--terra-deep)}
+.floating-cta:hover{background:#2d5f2a}
 @media (max-width: 540px){ .floating-cta{right:14px;bottom:14px} }
 
 @media (max-width: 768px){
@@ -1454,7 +1459,7 @@ button{font:inherit}
 </section>
 
 <!-- ───────── Pain points ───────── -->
-<section class="section section-cream" id="pain" data-screen-label="02 Pain Points">
+<section class="section section-cream" id="pain" data-screen-label="02 Pain Points" style="background:#f0f5f0">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1492,7 +1497,7 @@ button{font:inherit}
 </section>
 
 <!-- ───────── Strengths ───────── -->
-<section class="section section-paper" id="strengths" data-screen-label="03 Strengths">
+<section class="section section-paper" id="strengths" data-screen-label="03 Strengths" style="background:#ffffff">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1549,7 +1554,7 @@ button{font:inherit}
 </section>
 
 <!-- ───────── Services ───────── -->
-<section class="section section-cream" id="services" data-screen-label="04 Services">
+<section class="section section-cream" id="services" data-screen-label="04 Services" style="background:#fafaf8">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1653,7 +1658,7 @@ button{font:inherit}
 </section>
 
 <!-- ───────── Pricing ───────── -->
-<section class="section" id="pricing" data-screen-label="06 Pricing" style="background:#f7f8f3">
+<section class="section" id="pricing" data-screen-label="06 Pricing" style="background:#f0f5f0">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1699,7 +1704,7 @@ button{font:inherit}
 
       <!-- 03 SNS運用素材制作（ハイライト） -->
       <article class="price feat reveal d3">
-        <span class="price-badge">人気</span>
+        <span class="price-badge badge-popular">人気</span>
         <div class="price-cat">03 — SNS</div>
         <h3>SNS運用素材制作</h3>
         <div class="price-sub">継続的なブランド発信に</div>
@@ -1781,7 +1786,7 @@ button{font:inherit}
 
       <!-- 08 AI業務効率化支援（ハイライト） -->
       <article class="price feat reveal d2">
-        <span class="price-badge">新サービス</span>
+        <span class="price-badge badge-new">新サービス</span>
         <div class="price-cat">08 — AI Support</div>
         <h3>AI業務効率化支援</h3>
         <div class="price-sub">制作業務の自動化・スピードアップを伴走支援</div>
@@ -1933,7 +1938,7 @@ button{font:inherit}
 </section>
 
 <!-- ───────── Testimonials ───────── -->
-<section class="section section-cream" id="voices" data-screen-label="09 Voices">
+<section class="section section-cream" id="voices" data-screen-label="09 Voices" style="background:#ffffff">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -1964,7 +1969,7 @@ button{font:inherit}
 </section>
 
 <!-- ───────── FAQ ───────── -->
-<section class="section section-paper" id="faq" data-screen-label="10 FAQ">
+<section class="section section-paper" id="faq" data-screen-label="10 FAQ" style="background:#f0f5f0">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
