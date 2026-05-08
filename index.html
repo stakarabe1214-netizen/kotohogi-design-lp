@@ -1516,7 +1516,7 @@ button{font:inherit}
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <h3>SNS運用素材制作</h3>
         <p>日々の投稿を魅力的に。続けやすいテンプレートと、目を引くキービジュアルを。</p>
-        <span class="more">テンプレ運用も対応 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <span class="more" id="cta-sns" role="button" tabindex="0" style="cursor:pointer">テンプレ運用も対応 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </article>
 
       <article class="svc reveal d3">
@@ -2153,6 +2153,17 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   function activate(){
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});
     document.getElementById('message').value = 'ポスター・チラシ制作について相談したいです。';
+    setTimeout(function(){ document.getElementById('name').focus(); }, 600);
+  }
+  btn.addEventListener('click', activate);
+  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') activate(); });
+})();
+(function(){
+  var btn = document.getElementById('cta-sns');
+  if(!btn) return;
+  function activate(){
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    document.getElementById('message').value = 'SNS運用素材制作・テンプレートについて相談したいです。';
     setTimeout(function(){ document.getElementById('name').focus(); }, 600);
   }
   btn.addEventListener('click', activate);
