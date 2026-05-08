@@ -734,6 +734,40 @@ button{font:inherit}
   font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;
 }
 
+/* ─────────── pricing categories ─────────── */
+.price-category{margin-top:56px}
+.price-category:first-of-type{margin-top:0}
+.price-cat-header{
+  display:flex;flex-direction:column;
+  padding-left:18px;
+  border-left:4px solid #3d7a38;
+  border-radius:0 2px 2px 0;
+  margin-bottom:24px;
+}
+.price-cat-title{
+  font-size:20px;font-weight:700;
+  color:#3d7a38;
+  margin:0 0 8px;
+}
+.price-cat-sub{
+  font-size:14px;color:#888888;
+  margin:0;
+}
+.price-divider{
+  border:none;
+  border-top:1px solid #e0ece0;
+  margin:48px 0;
+}
+.price-category .price-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+@media(max-width:920px){
+  .price-category .price-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .price-category .price-grid{grid-template-columns:1fr}
+}
+
 /* ─────────── small-lot printing ─────────── */
 .print-section{
   background:
@@ -1668,139 +1702,172 @@ button{font:inherit}
       <p class="lede">"小さく始めて、続けられる"を大切に。<br/>はじめての方は、まずお気軽にご相談ください。</p>
     </div>
 
-    <div class="price-grid">
+    <!-- ── カテゴリ① はじめての方におすすめ ── -->
+    <div class="price-category">
+      <div class="price-cat-header">
+        <p class="price-cat-title">はじめての方におすすめ</p>
+        <p class="price-cat-sub">まず一つから、気軽にご相談ください。</p>
+      </div>
+      <div class="price-grid">
 
-      <!-- 01 ポスター制作 -->
-      <article class="price reveal">
-        <div class="price-cat">01 — Poster</div>
-        <h3>ポスター制作</h3>
-        <div class="price-sub">イベント・店頭・告知に</div>
-        <div class="amount">¥5,000<small>〜</small></div>
-        <div class="from">サイズ・枚数により変動</div>
-        <ul>
-          <li>AIラフ案 3パターン提案</li>
-          <li>A2 / B2 / A1 サイズ対応</li>
-          <li>修正 2回まで無料</li>
-          <li>納品形式：PDF / PNG / AI</li>
-          <li>印刷入稿データ対応可</li>
-        </ul>
-      </article>
+        <!-- 01 ポスター制作 -->
+        <article class="price reveal">
+          <div class="price-cat">01 — Poster</div>
+          <h3>ポスター制作</h3>
+          <div class="price-sub">イベント・店頭・告知に</div>
+          <div class="amount">¥5,000<small>〜</small></div>
+          <div class="from">サイズ・枚数により変動</div>
+          <ul>
+            <li>AIラフ案 3パターン提案</li>
+            <li>A2 / B2 / A1 サイズ対応</li>
+            <li>修正 2回まで無料</li>
+            <li>納品形式：PDF / PNG / AI</li>
+            <li>印刷入稿データ対応可</li>
+          </ul>
+        </article>
 
-      <!-- 02 チラシ制作 -->
-      <article class="price reveal d2">
-        <div class="price-cat">02 — Flyer</div>
-        <h3>チラシ制作</h3>
-        <div class="price-sub">集客・販促・イベント告知に</div>
-        <div class="amount">¥25,000<small>〜</small></div>
-        <div class="from">片面 A4 サイズ基準</div>
-        <ul>
-          <li>AIラフ案 3パターン提案</li>
-          <li>片面・両面どちらも対応</li>
-          <li>修正 2回まで無料</li>
-          <li>納品形式：PDF / PNG</li>
-          <li>印刷会社への入稿サポート</li>
-        </ul>
-      </article>
+        <!-- 02 チラシ制作 -->
+        <article class="price reveal d2">
+          <div class="price-cat">02 — Flyer</div>
+          <h3>チラシ制作</h3>
+          <div class="price-sub">集客・販促・イベント告知に</div>
+          <div class="amount">¥25,000<small>〜</small></div>
+          <div class="from">片面 A4 サイズ基準</div>
+          <ul>
+            <li>AIラフ案 3パターン提案</li>
+            <li>片面・両面どちらも対応</li>
+            <li>修正 2回まで無料</li>
+            <li>納品形式：PDF / PNG</li>
+            <li>印刷会社への入稿サポート</li>
+          </ul>
+        </article>
 
-      <!-- 03 SNS運用素材制作（ハイライト） -->
-      <article class="price feat reveal d3">
-        <span class="price-badge badge-popular">人気</span>
-        <div class="price-cat">03 — SNS</div>
-        <h3>SNS運用素材制作</h3>
-        <div class="price-sub">継続的なブランド発信に</div>
-        <div class="amount">¥30,000<small>〜 / 月</small></div>
-        <div class="from">月 5〜10 点〜 / Instagram・X 等</div>
-        <ul>
-          <li>投稿画像 月5〜10点制作</li>
-          <li>Instagram / X / Facebook 対応</li>
-          <li>AIテンプレート運用支援</li>
-          <li>月次オンライン定例（30分）</li>
-          <li>ストーリーズ・リール素材対応可</li>
-        </ul>
-      </article>
+        <!-- 03 SNS運用素材制作（ハイライト） -->
+        <article class="price feat reveal d3">
+          <span class="price-badge badge-popular">人気</span>
+          <div class="price-cat">03 — SNS</div>
+          <h3>SNS運用素材制作</h3>
+          <div class="price-sub">継続的なブランド発信に</div>
+          <div class="amount">¥30,000<small>〜 / 月</small></div>
+          <div class="from">月 5〜10 点〜 / Instagram・X 等</div>
+          <ul>
+            <li>投稿画像 月5〜10点制作</li>
+            <li>Instagram / X / Facebook 対応</li>
+            <li>AIテンプレート運用支援</li>
+            <li>月次オンライン定例（30分）</li>
+            <li>ストーリーズ・リール素材対応可</li>
+          </ul>
+        </article>
 
-      <!-- 04 LP制作 -->
-      <article class="price reveal">
-        <div class="price-cat">04 — Landing Page</div>
-        <h3>LP制作</h3>
-        <div class="price-sub">商品・サービスの訴求ページに</div>
-        <div class="amount">¥70,000<small>〜</small></div>
-        <div class="from">ページ規模・機能要件により変動</div>
-        <ul>
-          <li>ヒアリング〜デザイン〜コーディング</li>
-          <li>PC / スマートフォン 完全対応</li>
-          <li>コンバージョン設計サポート</li>
-          <li>修正 3回まで無料</li>
-          <li>公開後 1ヶ月サポート付</li>
-        </ul>
-      </article>
+      </div>
+    </div>
 
-      <!-- 05 ロゴ・名刺・会社案内（ハイライト） -->
-      <article class="price feat reveal d2">
-        <span class="price-badge">おすすめ</span>
-        <div class="price-cat">05 — Branding</div>
-        <h3>ロゴ・名刺・会社案内</h3>
-        <div class="price-sub">ブランドの基盤をまとめて構築</div>
-        <div class="amount">¥100,000<small>〜</small></div>
-        <div class="from">セット価格 / 単品対応も可</div>
-        <ul>
-          <li>ロゴデザイン（3案提案）</li>
-          <li>名刺デザイン（両面）</li>
-          <li>会社案内 4〜8ページ</li>
-          <li>ブランドカラー・フォント選定</li>
-          <li>各種データ形式での納品</li>
-        </ul>
-      </article>
+    <hr class="price-divider">
 
-      <!-- 06 商品撮影 -->
-      <article class="price reveal d3">
-        <div class="price-cat">06 — Photography</div>
-        <h3>商品撮影</h3>
-        <div class="price-sub">EC・SNS・カタログ用途に</div>
-        <div class="amount">¥30,000<small>〜</small></div>
-        <div class="from">商品数・スタイリング内容により変動</div>
-        <ul>
-          <li>商品 5〜10点 撮影（半日）</li>
-          <li>背景・スタイリングご相談</li>
-          <li>レタッチ・色補正込み</li>
-          <li>納品形式：JPEG / PNG（高解像度）</li>
-          <li>EC / SNS 両用サイズ書き出し</li>
-        </ul>
-      </article>
+    <!-- ── カテゴリ② しっかり整えたい方向け ── -->
+    <div class="price-category">
+      <div class="price-cat-header">
+        <p class="price-cat-title">しっかり整えたい方向け</p>
+        <p class="price-cat-sub">ブランドの基盤をまとめて構築したい方に。</p>
+      </div>
+      <div class="price-grid">
 
-      <!-- 07 メニューブック制作 -->
-      <article class="price reveal">
-        <div class="price-cat">07 — Menu Book</div>
-        <h3>メニューブック制作</h3>
-        <div class="price-sub">飲食店・サロン・スクール向け</div>
-        <div class="amount">¥80,000<small>〜</small></div>
-        <div class="from">ページ数・写真撮影有無により変動</div>
-        <ul>
-          <li>A4 / A5 サイズ 4〜8ページ</li>
-          <li>写真撮影・レタッチ込みプランあり</li>
-          <li>印刷入稿データ対応</li>
-          <li>修正 2回まで無料</li>
-          <li>デジタルメニュー版（PDF）も対応</li>
-        </ul>
-      </article>
+        <!-- 04 LP制作 -->
+        <article class="price reveal">
+          <div class="price-cat">04 — Landing Page</div>
+          <h3>LP制作</h3>
+          <div class="price-sub">商品・サービスの訴求ページに</div>
+          <div class="amount">¥70,000<small>〜</small></div>
+          <div class="from">ページ規模・機能要件により変動</div>
+          <ul>
+            <li>ヒアリング〜デザイン〜コーディング</li>
+            <li>PC / スマートフォン 完全対応</li>
+            <li>コンバージョン設計サポート</li>
+            <li>修正 3回まで無料</li>
+            <li>公開後 1ヶ月サポート付</li>
+          </ul>
+        </article>
 
-      <!-- 08 AI業務効率化支援（ハイライト） -->
-      <article class="price feat reveal d2">
-        <span class="price-badge badge-new">新サービス</span>
-        <div class="price-cat">08 — AI Support</div>
-        <h3>AI業務効率化支援</h3>
-        <div class="price-sub">制作業務の自動化・スピードアップを伴走支援</div>
-        <div class="amount">¥50,000<small>〜 / 月</small></div>
-        <div class="from">スポット相談・月額顧問どちらも対応</div>
-        <ul>
-          <li>AIツール選定・導入サポート</li>
-          <li>プロンプト設計・テンプレート作成</li>
-          <li>SNS・デザイン業務の自動化提案</li>
-          <li>月次オンライン定例（60分）</li>
-          <li>チャットサポート（平日）</li>
-        </ul>
-      </article>
+        <!-- 05 ロゴ・名刺・会社案内（ハイライト） -->
+        <article class="price feat reveal d2">
+          <span class="price-badge">おすすめ</span>
+          <div class="price-cat">05 — Branding</div>
+          <h3>ロゴ・名刺・会社案内</h3>
+          <div class="price-sub">ブランドの基盤をまとめて構築</div>
+          <div class="amount">¥100,000<small>〜</small></div>
+          <div class="from">セット価格 / 単品対応も可</div>
+          <ul>
+            <li>ロゴデザイン（3案提案）</li>
+            <li>名刺デザイン（両面）</li>
+            <li>会社案内 4〜8ページ</li>
+            <li>ブランドカラー・フォント選定</li>
+            <li>各種データ形式での納品</li>
+          </ul>
+        </article>
 
+        <!-- 07 メニューブック制作 -->
+        <article class="price reveal d3">
+          <div class="price-cat">07 — Menu Book</div>
+          <h3>メニューブック制作</h3>
+          <div class="price-sub">飲食店・サロン・スクール向け</div>
+          <div class="amount">¥80,000<small>〜</small></div>
+          <div class="from">ページ数・写真撮影有無により変動</div>
+          <ul>
+            <li>A4 / A5 サイズ 4〜8ページ</li>
+            <li>写真撮影・レタッチ込みプランあり</li>
+            <li>印刷入稿データ対応</li>
+            <li>修正 2回まで無料</li>
+            <li>デジタルメニュー版（PDF）も対応</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+
+    <hr class="price-divider">
+
+    <!-- ── カテゴリ③ 継続的にサポートを受けたい方向け ── -->
+    <div class="price-category">
+      <div class="price-cat-header">
+        <p class="price-cat-title">継続的にサポートを受けたい方向け</p>
+        <p class="price-cat-sub">月単位でじっくり伴走します。</p>
+      </div>
+      <div class="price-grid">
+
+        <!-- 06 商品撮影 -->
+        <article class="price reveal">
+          <div class="price-cat">06 — Photography</div>
+          <h3>商品撮影</h3>
+          <div class="price-sub">EC・SNS・カタログ用途に</div>
+          <div class="amount">¥30,000<small>〜</small></div>
+          <div class="from">商品数・スタイリング内容により変動</div>
+          <ul>
+            <li>商品 5〜10点 撮影（半日）</li>
+            <li>背景・スタイリングご相談</li>
+            <li>レタッチ・色補正込み</li>
+            <li>納品形式：JPEG / PNG（高解像度）</li>
+            <li>EC / SNS 両用サイズ書き出し</li>
+          </ul>
+        </article>
+
+        <!-- 08 AI業務効率化支援（ハイライト） -->
+        <article class="price feat reveal d2">
+          <span class="price-badge badge-new">新サービス</span>
+          <div class="price-cat">08 — AI Support</div>
+          <h3>AI業務効率化支援</h3>
+          <div class="price-sub">制作業務の自動化・スピードアップを伴走支援</div>
+          <div class="amount">¥50,000<small>〜 / 月</small></div>
+          <div class="from">スポット相談・月額顧問どちらも対応</div>
+          <ul>
+            <li>AIツール選定・導入サポート</li>
+            <li>プロンプト設計・テンプレート作成</li>
+            <li>SNS・デザイン業務の自動化提案</li>
+            <li>月次オンライン定例（60分）</li>
+            <li>チャットサポート（平日）</li>
+          </ul>
+        </article>
+
+      </div>
     </div>
 
     <div class="price-note reveal">
