@@ -1546,9 +1546,9 @@ button{font:inherit}
       <article class="svc reveal d3">
         <span class="tag">06 / AI</span>
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-        <h3>AI業務効率化コンサル</h3>
-        <p>業務にAIを活用するサポート。"うちの業務に合うAI"を一緒に設計します。</p>
-        <span class="more">小さく試して、続ける <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <h3>AI活用サポート</h3>
+        <p>ChatGPT・動画編集AIなど、すぐ使えるAIツールの活用法を一緒に学びながら業務を楽にします。小さく試して、続けられる形を作ります。</p>
+        <span class="more" id="cta-ai" role="button" tabindex="0" style="cursor:pointer">まずは相談してみる <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </article>
     </div>
   </div>
@@ -2187,6 +2187,17 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   function activate(){
     document.getElementById('contact').scrollIntoView({behavior:'smooth'});
     document.getElementById('message').value = 'メニュー・商品撮影（店舗撮影）について相談したいです。';
+    setTimeout(function(){ document.getElementById('name').focus(); }, 600);
+  }
+  btn.addEventListener('click', activate);
+  btn.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' ') activate(); });
+})();
+(function(){
+  var btn = document.getElementById('cta-ai');
+  if(!btn) return;
+  function activate(){
+    document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    document.getElementById('message').value = 'AI活用サポートについて相談したいです。';
     setTimeout(function(){ document.getElementById('name').focus(); }, 600);
   }
   btn.addEventListener('click', activate);
