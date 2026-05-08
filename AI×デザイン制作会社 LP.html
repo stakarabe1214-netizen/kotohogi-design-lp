@@ -132,11 +132,11 @@ button{font:inherit}
 
 /* section heading */
 .h-display{
-  font-family:var(--font-display);
-  font-weight:700;  /* 600 → 700 */
+  font-family:var(--font-jp);
+  font-weight:900;
   font-size:clamp(1.7rem, 3.6vw, 2.6rem);
-  line-height:1.45;  /* 1.55 → 1.45 */
-  letter-spacing:.02em;  /* .04em → .02em */
+  line-height:1.45;
+  letter-spacing:.02em;
   color:var(--ink);
   margin:0;
   text-shadow: 0 2px 4px rgba(58,74,61,.08);
@@ -145,9 +145,9 @@ button{font:inherit}
   font-style:normal;
   color:var(--terra-deep);
   position:relative;
-  font-family:var(--font-hand-jp);
-  font-weight:500;  /* 400 → 500 */
-  letter-spacing:.02em;
+  font-family:inherit;
+  font-weight:inherit;
+  letter-spacing:inherit;
 }
 .h-display em::after{
   content:"";
@@ -159,7 +159,9 @@ button{font:inherit}
   transform-origin:left;
 }
 .lede{
-  font-size:clamp(.95rem,1.1vw,1.05rem);
+  font-family:var(--font-jp);
+  font-size:clamp(1rem,1.15vw,1.08rem);
+  font-weight:500;
   color:var(--ink-soft);
   line-height:2;
   max-width:42em;
@@ -171,8 +173,8 @@ button{font:inherit}
   padding:18px 32px;
   background:var(--terra-deep);color:#fff;
   border:0;border-radius:999px;
-  font-family:var(--font-hand-jp);
-  font-weight:400;font-size:18px;letter-spacing:.05em;
+  font-family:var(--font-jp);
+  font-weight:700;font-size:17px;letter-spacing:.08em;
   cursor:pointer;
   box-shadow:0 8px 24px rgba(94,154,110,.38), inset 0 1px 0 rgba(255,255,255,.2);
   transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, background .25s;
@@ -193,8 +195,8 @@ button{font:inherit}
 .btn:hover .arr{transform:translateX(4px)}
 .btn-ghost{
   display:inline-flex;align-items:center;gap:12px;
-  font-family:var(--font-hand-jp);
-  font-weight:400;font-size:16px;color:var(--ink);
+  font-family:var(--font-jp);
+  font-weight:600;font-size:15px;color:var(--ink);
   border-bottom:1px solid var(--ink);padding:6px 0;letter-spacing:.05em;
   transition:color .25s, border-color .25s, gap .3s;
 }
@@ -223,6 +225,39 @@ button{font:inherit}
 .logo-name small{display:block;font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--ink-soft);font-weight:400;margin-top:2px}
 .hdr-right{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
 
+/* ─────────── site nav bar ─────────── */
+.site-nav{
+  position:fixed;left:0;right:0;z-index:101;
+  background:rgba(242,246,236,.96);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-warm);
+  box-shadow:0 2px 16px rgba(58,74,61,.07);
+  transform:translateY(-110%);
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+.site-nav.nav-visible{transform:translateY(0)}
+.site-nav-inner{
+  display:flex;align-items:center;justify-content:center;
+  gap:2px;padding:6px 16px;
+  overflow-x:auto;-webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  white-space:nowrap;max-width:860px;margin:0 auto;
+}
+.site-nav-inner::-webkit-scrollbar{display:none}
+.site-nav a{
+  display:inline-block;padding:8px 18px;
+  font-family:var(--font-jp);font-size:13px;font-weight:700;
+  color:var(--ink-soft);text-decoration:none;letter-spacing:.06em;
+  border-radius:var(--r-sm);
+  touch-action:manipulation;
+  transition:color .2s,background .2s;
+}
+.site-nav a:hover{color:var(--terra-deep);background:var(--cream-deep)}
+.site-nav a.nav-active{color:var(--terra-deep);background:var(--cream-deep)}
+@media(max-width:640px){
+  .site-nav-inner{justify-content:flex-start;gap:0;padding:4px 8px}
+  .site-nav a{font-size:12px;padding:8px 12px}
+}
+
 /* ─────────── hero ─────────── */
 .hero{
   position:relative;
@@ -242,8 +277,8 @@ button{font:inherit}
 @media (max-width: 920px){ .hero-grid{grid-template-columns:1fr;gap:50px} .hero{padding:120px 0 70px} }
 
 .hero h1{
-  font-family:var(--font-display);
-  font-weight:600;
+  font-family:var(--font-jp);
+  font-weight:900;
   font-size:clamp(2.1rem, 5.2vw, 3.6rem);
   line-height:1.5;
   letter-spacing:.03em;
@@ -252,7 +287,7 @@ button{font:inherit}
 }
 .hero h1 .accent{
   color:var(--terra-deep);
-  font-family:var(--font-hand-jp);font-weight:400;
+  font-family:inherit;font-weight:inherit;
   position:relative;display:inline-block;
 }
 .hero h1 .accent::after{
@@ -418,11 +453,17 @@ button{font:inherit}
 }
 .pain:hover .ico::after{opacity:1;transform:rotate(45deg)}
 .pain p{margin:0;font-size:14.5px;line-height:1.85;color:var(--ink)}
+.pain-img{background-size:cover;background-position:center}
+.pain-img::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(58,74,61,.65) 0%,rgba(58,74,61,.82) 100%);border-radius:inherit;z-index:0}
+.pain-img>*{position:relative;z-index:1}
+.pain-img .num{color:rgba(255,255,255,.75);font-size:22px;letter-spacing:.1em;display:block;margin-bottom:auto}
+.pain-img .ico{display:none}
+.pain-img p{color:#fff;font-size:18px;font-weight:700;line-height:1.7;margin-top:48px}
 
 .pain-closing{
   margin-top:48px;text-align:center;
   font-size:1.2rem;color:var(--ink);
-  font-family:var(--font-hand-jp);font-weight:400;letter-spacing:.04em;
+  font-family:var(--font-jp);font-weight:500;letter-spacing:.04em;
 }
 .pain-closing::before, .pain-closing::after{
   content:"";display:inline-block;width:30px;height:1px;background:var(--terra);vertical-align:middle;margin:0 18px;opacity:.6;
@@ -438,23 +479,24 @@ button{font:inherit}
 }
 @media (max-width: 720px){ .process{grid-template-columns:1fr;gap:14px;padding:30px} .process .arr-big{transform:rotate(90deg)} }
 
-.proc-step{text-align:center;padding:24px 18px}
+.proc-step{text-align:center;padding:0 0 24px;min-width:0;overflow:hidden;border-radius:var(--r-md)}
 .proc-step .badge{
   display:inline-flex;align-items:center;gap:8px;
   font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;
   color:var(--terra-deep);background:var(--cream);
-  padding:6px 14px;border-radius:999px;margin-bottom:14px;
+  padding:6px 14px;border-radius:999px;margin:0 18px 14px;
 }
-.proc-step h4{font-size:1.2rem;margin:0 0 8px;font-weight:600;letter-spacing:.04em;font-family:var(--font-hand-jp)}
-.proc-step p{margin:0;color:var(--ink-soft);font-size:13.5px;line-height:1.8}
+.proc-step h4{font-size:1.2rem;margin:0 18px 8px;font-weight:700;letter-spacing:.03em;font-family:var(--font-jp)}
+.proc-step p{margin:0 18px;color:var(--ink);font-size:14.5px;line-height:1.8}
 .proc-step .ico-big{
-  width:80px;height:80px;margin:0 auto 18px;
-  border-radius:24px;display:grid;place-items:center;
-  background:linear-gradient(140deg,var(--cream),#fff);
-  color:var(--terra-deep);box-shadow:inset 0 0 0 .5px var(--line-warm), 0 8px 24px rgba(94,154,110,.08);
+  width:100%;height:200px;margin:0 0 20px;
+  border-radius:var(--r-md) var(--r-md) 0 0;overflow:hidden;
+  background-color:var(--gold);
+  background-size:125%;
+  background-repeat:no-repeat;
+  background-position:center;
 }
-.proc-step .ico-big svg{width:36px;height:36px}
-.proc-step.ai .ico-big{background:linear-gradient(140deg,#F4E89B,#FBFCF6);color:var(--gold-deep)}
+.proc-step.ai .ico-big{background-color:var(--gold)}
 .arr-big{
   width:54px;height:54px;border-radius:50%;
   background:var(--terra);color:#fff;
@@ -486,8 +528,8 @@ button{font:inherit}
   display:grid;place-items:center;margin-bottom:20px;
 }
 .strength .ico svg{width:24px;height:24px}
-.strength h3{font-size:1.1rem;margin:0 0 10px;letter-spacing:.04em;font-family:var(--font-hand-jp);font-weight:600}
-.strength p{margin:0;color:var(--ink-soft);font-size:13.5px;line-height:1.85}
+.strength h3{font-size:1.15rem;margin:0 0 10px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:700}
+.strength p{margin:0;color:var(--ink);font-size:14.5px;line-height:1.85}
 .strength .num{position:absolute;top:14px;right:18px;font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);letter-spacing:.15em}
 
 /* ─────────── services ─────────── */
@@ -516,8 +558,8 @@ button{font:inherit}
 }
 .svc:hover .ico{transform:rotate(-6deg) scale(1.05)}
 .svc .ico svg{width:32px;height:32px}
-.svc h3{font-size:1.2rem;margin:0 0 10px;letter-spacing:.04em;font-family:var(--font-hand-jp);font-weight:600}
-.svc p{margin:0 0 24px;color:var(--ink-soft);font-size:13.5px;line-height:1.85}
+.svc h3{font-size:1.2rem;margin:0 0 10px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:700}
+.svc p{margin:0 0 24px;color:var(--ink);font-size:14.5px;line-height:1.85}
 .svc .more{
   display:inline-flex;align-items:center;gap:8px;
   font-size:12px;color:var(--terra-deep);font-weight:500;letter-spacing:.05em;
@@ -550,14 +592,14 @@ button{font:inherit}
   background:#fff;border-radius:var(--r-md);padding:24px 26px;
   border:.5px solid var(--line);box-shadow:var(--shadow-sm);
 }
-.flow-card h4{font-size:1.1rem;margin:0 0 6px;letter-spacing:.04em;font-family:var(--font-hand-jp);font-weight:600}
-.flow-card p{margin:0;color:var(--ink-soft);font-size:13.5px;line-height:1.85}
+.flow-card h4{font-size:1.1rem;margin:0 0 6px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:700}
+.flow-card p{margin:0;color:var(--ink);font-size:14.5px;line-height:1.85}
 .flow-card .meta{font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--terra-deep);margin-bottom:8px;text-transform:uppercase}
 .flow-dot{
   width:54px;height:54px;border-radius:50%;
   background:#fff;border:1.5px solid var(--terra);
   display:grid;place-items:center;
-  font-family:var(--font-display);font-weight:700;color:var(--terra-deep);font-size:18px;
+  font-family:var(--font-jp);font-weight:700;color:var(--terra-deep);font-size:18px;
   box-shadow:0 0 0 6px var(--paper), 0 6px 18px rgba(94,154,110,.18);
   z-index:2;
   flex-shrink:0;
@@ -674,7 +716,7 @@ button{font:inherit}
   border-left:1.5px solid #fff;border-bottom:1.5px solid #fff;
   transform:rotate(-45deg);
 }
-.print-bullets li b{font-weight:700;color:var(--terra-deep);font-family:var(--font-hand-jp)}
+.print-bullets li b{font-weight:700;color:var(--terra-deep);font-family:var(--font-jp)}
 
 .print-promise{
   display:inline-block;
@@ -741,7 +783,7 @@ button{font:inherit}
 .poster-bad::after{
   content:"BEFORE";
   position:absolute;top:-30px;left:0;
-  font-family:var(--font-hand-en);font-size:18px;color:var(--ink-soft);font-weight:700;
+  font-family:var(--font-jp);font-size:18px;color:var(--ink-soft);font-weight:700;
   letter-spacing:.1em;
 }
 
@@ -758,7 +800,7 @@ button{font:inherit}
 .poster-good::after{
   content:"AFTER";
   position:absolute;top:-30px;right:8px;
-  font-family:var(--font-hand-en);font-size:20px;color:var(--terra-deep);font-weight:700;
+  font-family:var(--font-jp);font-size:20px;color:var(--terra-deep);font-weight:700;
   letter-spacing:.1em;
 }
 .poster-good .pg-bg{
@@ -842,7 +884,7 @@ button{font:inherit}
 }
 .work-body{padding:18px 4px 0}
 .work-body .client-name{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;color:var(--ink-faint);text-transform:none}
-.work-body h4{font-size:1.05rem;margin:8px 0 12px;letter-spacing:.03em;font-family:var(--font-hand-jp);font-weight:600;line-height:1.7}
+.work-body h4{font-size:1.05rem;margin:8px 0 12px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:700;line-height:1.7}
 .work-body .tags{
   display:flex;flex-wrap:wrap;gap:6px 0;
   font-family:var(--font-jp);font-size:11.5px;color:var(--ink-soft);letter-spacing:.04em;line-height:1.7;
@@ -851,7 +893,7 @@ button{font:inherit}
 .work-body .tags span:not(:last-child)::after{content:"／";color:var(--ink-faint);position:absolute;right:-2px;top:0}
 
 .works-foot{margin-top:60px;display:flex;justify-content:center}
-.works-foot .btn-ghost{font-family:var(--font-display)}
+.works-foot .btn-ghost{font-family:var(--font-jp)}
 
 /* ─────────── testimonials ─────────── */
 .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -864,14 +906,14 @@ button{font:inherit}
 }
 .test .qmark{
   position:absolute;top:18px;right:24px;
-  font-family:var(--font-hand-en);font-weight:700;font-size:80px;color:var(--gold-deep);opacity:.7;line-height:.6;
+  font-family:var(--font-jp);font-weight:900;font-size:80px;color:var(--gold-deep);opacity:.7;line-height:.6;
 }
 .test p{margin:0 0 24px;font-size:14.5px;line-height:2;color:var(--ink)}
 .test .who{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--line)}
 .test .ava{
   width:46px;height:46px;border-radius:50%;
   background:linear-gradient(135deg,var(--gold),var(--terra-soft));
-  display:grid;place-items:center;color:#fff;font-family:var(--font-display);font-weight:700;font-size:16px;
+  display:grid;place-items:center;color:#fff;font-family:var(--font-jp);font-weight:700;font-size:16px;
 }
 .test .who-info b{display:block;font-size:13px;font-weight:700;letter-spacing:.05em}
 .test .who-info span{font-size:11px;color:var(--ink-soft);font-family:var(--font-mono);letter-spacing:.1em}
@@ -887,13 +929,13 @@ button{font:inherit}
 .faq summary{
   list-style:none;cursor:default;padding:22px 26px;
   display:flex;align-items:center;gap:18px;
-  font-family:var(--font-hand-jp);font-weight:600;letter-spacing:.03em;font-size:1.02rem;
+  font-family:var(--font-jp);font-weight:600;letter-spacing:.03em;font-size:1.02rem;
 }
 .faq summary::-webkit-details-marker{display:none}
 .faq summary .q{
   flex-shrink:0;width:30px;height:30px;border-radius:50%;
   background:var(--terra);color:#fff;
-  display:grid;place-items:center;font-family:var(--font-display);font-weight:700;font-size:13px;
+  display:grid;place-items:center;font-family:var(--font-jp);font-weight:700;font-size:13px;
 }
 .faq summary .arr{
   margin-left:auto;flex-shrink:0;width:24px;height:24px;
@@ -1107,6 +1149,12 @@ button{font:inherit}
 .floating-cta:hover{background:var(--terra-deep)}
 @media (max-width: 540px){ .floating-cta{right:14px;bottom:14px} }
 
+@media (max-width: 768px){
+  .h-display{-webkit-text-stroke:.4px var(--ink)}
+  .hero h1{-webkit-text-stroke:.4px var(--ink)}
+  .strength h3,.svc h3,.flow-card h4,.proc-step h4,.work-body h4{-webkit-text-stroke:.3px var(--ink)}
+}
+
 /* ─────────── botanical decorations ─────────── */
 .botanical-row{
   display:flex;gap:18px;align-items:flex-end;justify-content:center;
@@ -1277,8 +1325,19 @@ button{font:inherit}
     <span class="logo-mark" aria-hidden="true"></span>
     <span class="logo-name">tsumugu<small>DESIGN STUDIO</small></span>
   </a>
-  <div class="hdr-right">Kobe — Japan / Est. 2026</div>
+
 </header>
+
+<!-- Site Nav Bar -->
+<nav class="site-nav" id="siteNav" aria-label="ページ内ナビゲーション">
+  <div class="site-nav-inner">
+    <a href="#services">サービス</a>
+    <a href="#flow">制作の流れ</a>
+    <a href="#pricing">料金</a>
+    <a href="#works">制作実績</a>
+    <a href="#faq">よくある質問</a>
+  </div>
+</nav>
 
 <!-- ───────── Hero ───────── -->
 <section class="hero" id="top" data-screen-label="01 Hero">
@@ -1290,7 +1349,7 @@ button{font:inherit}
       <h1>
         丁寧に、素早く、<br/>
         伝わる<span class="accent">販促物</span>を<br/>
-        もっと早く、もっと身近に。
+        もっと早く、<br/>もっと身近に。
       </h1>
       <p class="sub">
         スピード感と、デザイナーの丁寧な仕上がり。<br/>
@@ -1349,22 +1408,22 @@ button{font:inherit}
     </div>
 
     <div class="pain-grid">
-      <article class="pain reveal">
+      <article class="pain pain-img reveal" style="background-image:url('images/01.jpg')">
         <span class="num">№ 01</span>
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
         <p>チラシやSNS画像を作るのに、毎回時間がかかってしまう。</p>
       </article>
-      <article class="pain reveal d2">
+      <article class="pain pain-img reveal d2" style="background-image:url('images/02.jpg')">
         <span class="num">№ 02</span>
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r=".5" fill="currentColor"/><circle cx="13" cy="10" r=".5" fill="currentColor"/></svg></div>
         <p>お店や商品の魅力が、なかなかうまく伝わらない。</p>
       </article>
-      <article class="pain reveal d3">
+      <article class="pain pain-img reveal d3" style="background-image:url('images/03.jpg')">
         <span class="num">№ 03</span>
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <p>デザイン会社に頼むと、予算的に少し厳しい。</p>
       </article>
-      <article class="pain reveal d4">
+      <article class="pain pain-img reveal d4" style="background-image:url('images/04.jpg')">
         <span class="num">№ 04</span>
         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="14" rx="2"/><circle cx="9" cy="13" r="1.2"/><circle cx="15" cy="13" r="1.2"/><path d="M12 2v4M9 20v2M15 20v2"/></svg></div>
         <p>AIを業務に活かしたいけれど、何から始めればいいかわからない。</p>
@@ -1389,14 +1448,14 @@ button{font:inherit}
     <!-- process -->
     <div class="process reveal">
       <div class="proc-step ai">
-        <div class="ico-big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5L20 8.5l-3.8 3.7.9 5.3L12 15l-5.1 2.5.9-5.3L4 8.5 9.5 7z"/></svg></div>
+        <div class="ico-big" style="background-image:url('images/step01.jpg')"></div>
         <span class="badge">STEP 01</span>
         <h4>素早くラフ案を生成</h4>
         <p>方向性・文章・ラフを<br/>スピーディーにご提案。</p>
       </div>
       <div class="arr-big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
       <div class="proc-step">
-        <div class="ico-big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l3-9 12-12 3 3-12 12-9 3z"/><path d="M14 5l3 3"/></svg></div>
+        <div class="ico-big" style="background-image:url('images/step02.jpg')"></div>
         <span class="badge">STEP 02</span>
         <h4>デザイナーが丁寧に仕上げ</h4>
         <p>細部の温度、文字組み、写真の<br/>ひと押しを人の手で。</p>
@@ -1438,7 +1497,7 @@ button{font:inherit}
     <div class="section-head reveal">
       <div>
         <span class="eyebrow"><span class="dot"></span><span>Services</span></span>
-        <h2 class="h-display" style="margin-top:18px">まるごとお任せ、<br/><em>ワンストップ</em>のサービス。</h2>
+        <h2 class="h-display" style="margin-top:18px">まるごとお任せ、<br/><span style="white-space:nowrap"><em>ワンストップ</em>のサービス。</span></h2>
       </div>
       <p class="lede">紙ものから、Web、撮影、業務効率化まで。<br/>"伝わる"を作るためのものを、ひとつの窓口で。</p>
     </div>
@@ -1506,39 +1565,8 @@ button{font:inherit}
       <p class="lede">ご相談から納品まで、最短5日。<br/>各ステップで密にやりとりしながら、安心して進められます。</p>
     </div>
 
-    <div class="flow">
-      <div class="flow-rail" aria-hidden="true"></div>
-      <div class="flow-list">
-        <div class="flow-item reveal"><div class="flow-card">
-          <div class="meta">DAY 0 — Inquiry</div>
-          <h4>お問い合わせ・ヒアリング</h4>
-          <p>メール／LINE／電話、どこからでも。気になっていることをそのまま言葉にしてください。</p>
-        </div><div class="flow-dot">01</div><div class="flow-empty"></div></div>
-
-        <div class="flow-item reveal"><div class="flow-empty"></div><div class="flow-dot">02</div><div class="flow-card">
-          <div class="meta">DAY 1 — Proposal</div>
-          <h4>方向性のすり合わせ</h4>
-          <p>ご予算・納期・トーンをふまえて、複数の方向性をご提示します。</p>
-        </div></div>
-
-        <div class="flow-item reveal"><div class="flow-card">
-          <div class="meta">DAY 2-4 — Design</div>
-          <h4>デザイン制作・撮影</h4>
-          <p>デザイナーが手で仕上げ、必要に応じて撮影もこのフェーズで実施します。</p>
-        </div><div class="flow-dot">03</div><div class="flow-empty"></div></div>
-
-        <div class="flow-item reveal"><div class="flow-empty"></div><div class="flow-dot">04</div><div class="flow-card">
-          <div class="meta">DAY 4-5 — Review</div>
-          <h4>ご確認・修正</h4>
-          <p>2回まで無料で修正対応。細部まで、ご納得いくまで丁寧に。</p>
-        </div></div>
-
-        <div class="flow-item reveal"><div class="flow-card">
-          <div class="meta">DAY 5 — Delivery</div>
-          <h4>納品・運用サポート</h4>
-          <p>印刷データ／Web用／SNS用、ご利用シーンに合わせた形式で納品。その後の更新もご相談ください。</p>
-        </div><div class="flow-dot">05</div><div class="flow-empty"></div></div>
-      </div>
+    <div class="flow-manga reveal">
+      <img src="images/seisakunonagare.jpg" alt="制作の流れ" style="width:100%;height:auto;display:block;box-shadow:var(--shadow-md);">
     </div>
   </div>
 </section>
@@ -1727,35 +1755,8 @@ button{font:inherit}
         <p style="margin-top:32px"><span class="print-promise">少量からの印刷も、<span>すぐに動きます</span>。</span></p>
       </div>
 
-      <div class="print-art reveal d2" aria-hidden="true">
-        <span class="dec dec1">テープの跡…</span>
-        <span class="dec dec2">継ぎ目なし！</span>
-
-        <!-- before: collaged A4s -->
-        <div class="poster poster-bad">
-          <div class="tile t1">A4</div>
-          <div class="tile t2">A4</div>
-          <div class="tile t3">A4</div>
-          <div class="tile t4">A4</div>
-          <div class="tape tp1"></div>
-          <div class="tape tp2"></div>
-          <div class="tape tp3"></div>
-          <div class="stamp-bad">継ぎ目が目立つ…</div>
-        </div>
-
-        <!-- arrow -->
-        <div class="print-arrow">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </div>
-
-        <!-- after: clean large-format -->
-        <div class="poster poster-good">
-          <div class="pg-bg"></div>
-          <div class="pg-art"></div>
-          <div class="pg-size">B1 SIZE</div>
-          <div class="pg-title">伝わる、<br/>一枚のポスター</div>
-          <div class="pg-meta">— PRINTED IN ONE SHEET —</div>
-        </div>
+      <div class="print-art reveal d2">
+        <img src="images/sasikae02.jpg" alt="大判ポスター印刷イメージ" style="width:100%;height:auto;display:block;border-radius:var(--r-lg);box-shadow:var(--shadow-md);">
       </div>
     </div>
   </div>
@@ -1767,7 +1768,7 @@ button{font:inherit}
     <div class="section-head reveal">
       <div>
         <span class="eyebrow"><span class="dot"></span><span>Works</span></span>
-        <h2 class="h-display" style="margin-top:18px">これまでの<em>制作実績</em>。</h2>
+        <h2 class="h-display" style="margin-top:18px">これまでの<br/><em>制作実績</em>。</h2>
       </div>
       <p class="lede">飲食店・温浴・サロン・ECショップなど、地域に根ざした事業者さまを中心にお手伝いしています。<br/>※ 写真は仮の見本です。</p>
     </div>
@@ -1922,10 +1923,13 @@ button{font:inherit}
         <span class="eyebrow"><span class="dot"></span><span>About</span></span>
         <h2 class="h-display" style="margin-top:18px">私たちに<em>ついて</em>。</h2>
         <p class="body">
-          スピード感とビジュアルデザインを大切にした、<br/>
-          夫婦チームのワンストップ制作会社です。<br/><br/>
-          大手にはない柔軟な対応と、温かみのあるサポートで、<br/>
-          お客様の「伝えたい」を、ていねいに形にします。
+          私たちは、夫婦二人で運営する、<br/>小さなワンストップ制作会社です。<br/><br/>
+          Webサイト制作からロゴ、名刺のデザインまで。<br/>あなたの「伝えたい」想いを、企画から納品まで一貫してサポートさせていただきます。<br/><br/>
+          大切にしているのは、スピード感のある対応と、心に届くビジュアルデザイン。<br/>大手には無い柔軟さと、顔の見える温かいコミュニケーションで、一つ一つの案件に、ていねいに向き合ってます。<br/><br/>
+          新しい情報を常に取り入れながら、ゆったりとした時間の中で、お客様とじっくり対話をしていきたいと思います。<br/>そんなスタイルで、日々お仕事をしています。<br/><br/>
+          「こんなこと、相談してもいいですか？」<br/>
+          こんな小さなひと言でも、私たちは大歓迎です。<br/><br/>
+          どうぞお気軽に、あなたの想いをお聞かせください。
         </p>
         <a class="btn-ghost" href="#contact">私たちにご相談ください
           <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -2042,7 +2046,7 @@ button{font:inherit}
       <div>
         <h5>Legal</h5>
         <ul>
-          <li><a href="#privacy">プライバシーポリシー</a></li>
+          <li><a href="/privacy.html">プライバシーポリシー</a></li>
           <li><a href="#legal">特定商取引法に基づく表記</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
@@ -2105,11 +2109,34 @@ root.render(<Panel/>);
 // header on scroll
 const hdr = document.getElementById('hdr');
 const fc = document.getElementById('floatingCta');
+const siteNav = document.getElementById('siteNav');
+const navSections = ['services','flow','pricing','works','faq'];
+
+function updateSiteNav(){
+  const hdrH = hdr.getBoundingClientRect().height;
+  siteNav.style.top = hdrH + 'px';
+  const heroEl = document.getElementById('top');
+  const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 0;
+  siteNav.classList.toggle('nav-visible', heroBottom < 0);
+  // active section highlight
+  let current = '';
+  navSections.forEach(id => {
+    const el = document.getElementById(id);
+    if(!el) return;
+    if(el.getBoundingClientRect().top <= hdrH + 60) current = id;
+  });
+  siteNav.querySelectorAll('a').forEach(a => {
+    a.classList.toggle('nav-active', a.getAttribute('href') === '#' + current);
+  });
+}
+
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   hdr.classList.toggle('scrolled', y > 40);
   if (fc) fc.classList.toggle('show', y > 700);
+  updateSiteNav();
 }, {passive:true});
+updateSiteNav();
 
 // reveal on scroll
 const io = new IntersectionObserver((entries) => {
