@@ -1462,6 +1462,25 @@ button{font:inherit}
   .wiz-result-title{font-size:1.2rem}
 }
 
+/* ─────────── Pricing CTA ─────────── */
+.price-cta-btn{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:20px;padding:13px 20px;width:100%;background:#3d7a38;color:#fff;border-radius:999px;font-family:var(--font-jp);font-size:14px;font-weight:700;letter-spacing:.06em;text-decoration:none;box-shadow:0 3px 14px rgba(61,122,56,.35);transition:background .3s ease,transform .3s ease,box-shadow .3s ease}
+.price-cta-btn:hover{background:#2d5f2a;transform:translateY(-2px);box-shadow:0 8px 24px rgba(61,122,56,.45)}
+.price.feat .price-cta-btn{background:#fff;color:#3d7a38;box-shadow:0 3px 14px rgba(0,0,0,.12)}
+.price.feat .price-cta-btn:hover{background:#f0faf0;transform:translateY(-2px)}
+
+/* ─────────── Pricing footer CTA ─────────── */
+.pricing-footer-cta{margin-top:56px;padding:40px 32px;background:#fff;border-radius:20px;text-align:center;box-shadow:0 2px 30px rgba(58,74,61,.08);border:1px solid rgba(143,191,154,.25)}
+.pricing-footer-cta__text{font-family:var(--font-jp);font-size:1rem;font-weight:600;color:var(--ink);margin:0 0 24px;line-height:1.9}
+.pricing-footer-cta__text small{display:block;font-size:13px;font-weight:400;color:var(--ink-soft);margin-top:6px}
+@media(max-width:540px){.pricing-footer-cta{padding:28px 20px}}
+
+/* ─────────── Section CTA block ─────────── */
+.section-cta-block{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:48px}
+@media(max-width:600px){
+  .section-cta-block{flex-direction:column;align-items:stretch}
+  .section-cta-block .cta-primary,.section-cta-block .cta-outline{width:100%;text-align:center}
+}
+
 </style>
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
@@ -1781,6 +1800,10 @@ button{font:inherit}
         </div>
       </article>
     </div>
+    <div class="section-cta-block reveal">
+      <a href="#contact" class="cta-primary">まずは相談してみる</a>
+      <a href="#pricing" class="cta-outline">料金を確認する</a>
+    </div>
   </div>
 </section>
 
@@ -1874,6 +1897,10 @@ button{font:inherit}
             <li>納品形式：PDF / PNG / AI</li>
             <li>印刷入稿データ対応可</li>
           </ul>
+          <a href="#contact" class="price-cta-btn">
+            この内容で相談する
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </article>
 
         <!-- 02 チラシ制作 -->
@@ -1890,6 +1917,10 @@ button{font:inherit}
             <li>納品形式：PDF / PNG</li>
             <li>印刷会社への入稿サポート</li>
           </ul>
+          <a href="#contact" class="price-cta-btn">
+            この内容で相談する
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </article>
 
         <!-- 03 SNS運用素材制作（ハイライト） -->
@@ -1907,6 +1938,10 @@ button{font:inherit}
             <li>月次オンライン定例（30分）</li>
             <li>ストーリーズ・リール素材対応可</li>
           </ul>
+          <a href="#contact" class="price-cta-btn">
+            この内容で相談する
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </article>
 
       </div>
@@ -1936,6 +1971,10 @@ button{font:inherit}
             <li>修正 3回まで無料</li>
             <li>公開後 1ヶ月サポート付</li>
           </ul>
+          <a href="#contact" class="price-cta-btn">
+            この内容で相談する
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </article>
 
         <!-- 05 ロゴ・名刺・会社案内（ハイライト） -->
@@ -1953,6 +1992,10 @@ button{font:inherit}
             <li>ブランドカラー・フォント選定</li>
             <li>各種データ形式での納品</li>
           </ul>
+          <a href="#contact" class="price-cta-btn">
+            この内容で相談する
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </article>
 
         <!-- 07 メニューブック制作 -->
@@ -1969,6 +2012,10 @@ button{font:inherit}
             <li>修正 2回まで無料</li>
             <li>デジタルメニュー版（PDF）も対応</li>
           </ul>
+          <a href="#contact" class="price-cta-btn">
+            この内容で相談する
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </article>
 
       </div>
@@ -1998,6 +2045,10 @@ button{font:inherit}
             <li>納品形式：JPEG / PNG（高解像度）</li>
             <li>EC / SNS 両用サイズ書き出し</li>
           </ul>
+          <a href="#contact" class="price-cta-btn">
+            この内容で相談する
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </article>
 
         <!-- 08 業務効率化支援（ハイライト） -->
@@ -2015,6 +2066,10 @@ button{font:inherit}
             <li>月次オンライン定例（60分）</li>
             <li>チャットサポート（平日）</li>
           </ul>
+          <a href="#contact" class="price-cta-btn">
+            この内容で相談する
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
         </article>
 
       </div>
@@ -2024,6 +2079,20 @@ button{font:inherit}
       <p>※ 表示価格はすべて税抜・目安価格です。要件・規模により変動します。</p>
       <p>※ 印刷費・外注費（カメラマン・ライター等）は別途実費となります。</p>
       <p>※ 詳細はお見積もりにてご案内いたします。お気軽にご相談ください。</p>
+    </div>
+    <div class="pricing-footer-cta reveal">
+      <p class="pricing-footer-cta__text">
+        どのプランか迷っている方も、まずはお気軽にご相談ください。<br>
+        <small>ご要望をお聞きしてから、最適なプランをご提案します。</small>
+      </p>
+      <a href="#contact" class="btn">
+        無料相談・お見積もりはこちら
+        <span class="arr" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </span>
+      </a>
     </div>
   </div>
 </section>
