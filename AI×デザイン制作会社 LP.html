@@ -1415,50 +1415,143 @@ button{font:inherit}
 #submitBtn{align-self:flex-start;margin-top:12px}
 
 /* ─────────── 診断ウィザード ─────────── */
-.wiz-section{background:#fdf8f3}
-.wiz-header{text-align:center;margin-bottom:40px}
-.wiz-subtitle{color:#a0856a;font-size:15px;margin-top:8px}
+.wiz-section{
+  background:linear-gradient(160deg,#e4f0e7 0%,#f0f7f2 45%,#f8fdf9 100%);
+  position:relative;overflow:hidden;
+}
+.wiz-section::before{
+  content:'';position:absolute;top:-80px;right:-100px;
+  width:450px;height:450px;
+  background:radial-gradient(circle,rgba(61,122,56,.14) 0%,transparent 65%);
+  pointer-events:none;
+}
+.wiz-section::after{
+  content:'';position:absolute;bottom:-60px;left:-80px;
+  width:350px;height:350px;
+  background:radial-gradient(circle,rgba(61,122,56,.09) 0%,transparent 65%);
+  pointer-events:none;
+}
+.wiz-header{text-align:center;margin-bottom:48px}
+.wiz-subtitle{color:#2d6030;font-size:16px;margin-top:10px;font-weight:600;letter-spacing:.02em}
 .wiz-card{
-  background:#fff;border-radius:16px;
-  box-shadow:0 4px 30px rgba(58,46,40,.1);
-  padding:40px;max-width:680px;margin:0 auto;
+  background:#fff;border-radius:24px;
+  box-shadow:0 8px 60px rgba(30,60,32,.18),0 2px 16px rgba(30,60,32,.08);
+  max-width:680px;margin:0 auto;overflow:hidden;
 }
-.wiz-progress-wrap{height:6px;background:#e8d8c8;border-radius:3px;margin-bottom:16px}
-.wiz-progress-bar{height:100%;background:#c4956a;border-radius:3px;width:0%;transition:width .4s ease}
-.wiz-step-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:#a0856a;margin-bottom:28px;text-transform:uppercase}
-@keyframes wizFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.wiz-question,.wiz-result{animation:wizFadeIn .35s ease}
-.wiz-question h3{font-family:var(--font-jp);font-size:clamp(1.05rem,2vw,1.3rem);font-weight:700;color:#3a2e28;margin:0 0 24px;line-height:1.6}
-.wiz-choices{display:flex;flex-direction:column;gap:10px}
+.wiz-card-banner{
+  background:linear-gradient(135deg,#1e4a22 0%,#2d5f2a 40%,#3d7a38 72%,#4d9044 100%);
+  padding:22px 32px 18px;display:flex;align-items:center;gap:16px;
+}
+.wiz-card-banner-icon{font-size:2.4rem;line-height:1;flex-shrink:0}
+.wiz-card-banner-label{
+  font-family:var(--font-mono);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:5px;
+}
+.wiz-card-banner-title{
+  font-family:var(--font-jp);font-size:1rem;font-weight:800;
+  color:#fff;line-height:1.5;
+}
+.wiz-card-body{padding:32px 40px 40px}
+.wiz-progress-wrap{height:8px;background:#d8edd9;border-radius:4px;margin-bottom:12px;overflow:hidden}
+.wiz-progress-bar{
+  height:100%;
+  background:linear-gradient(90deg,#2d5f2a,#3d7a38,#5aab52);
+  border-radius:4px;width:0%;transition:width .45s cubic-bezier(.4,0,.2,1);
+}
+.wiz-step-label{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.18em;
+  color:#3d7a38;margin-bottom:28px;text-transform:uppercase;font-weight:700;
+}
+@keyframes wizFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.wiz-question,.wiz-result{animation:wizFadeIn .38s ease}
+.wiz-question h3{
+  font-family:var(--font-jp);font-size:clamp(1.1rem,2.2vw,1.45rem);
+  font-weight:800;color:#1a3a1c;margin:0 0 24px;line-height:1.55;
+}
+.wiz-choices{display:flex;flex-direction:column;gap:12px}
 .wiz-choice-btn{
-  width:100%;display:flex;align-items:center;gap:12px;
-  padding:14px 20px;background:#fff;border:2px solid #e8d8c8;
-  border-radius:12px;cursor:pointer;
-  font-family:var(--font-jp);font-size:15px;font-weight:500;
-  color:#3a2e28;text-align:left;
-  transition:background .2s,border-color .2s,transform .2s;
+  width:100%;display:flex;align-items:center;gap:14px;
+  padding:16px 20px;background:#fff;
+  border:2.5px solid #c2dbc4;border-radius:14px;cursor:pointer;
+  font-family:var(--font-jp);font-size:15px;font-weight:600;
+  color:#1a3a1c;text-align:left;position:relative;
+  transition:all .22s cubic-bezier(.4,0,.2,1);
 }
-.wiz-choice-btn:hover{background:#fdf8f3;border-color:#c4956a;transform:translateX(4px)}
-.wiz-choice-emoji{font-size:1.3em;flex-shrink:0}
+.wiz-choice-btn::after{
+  content:'→';position:absolute;right:18px;
+  font-size:16px;color:#3d7a38;
+  opacity:0;transform:translateX(-6px);transition:all .22s;
+}
+.wiz-choice-btn:hover{
+  background:#f0f9f1;border-color:#3d7a38;
+  transform:translateX(6px);
+  box-shadow:0 4px 18px rgba(61,122,56,.18);
+}
+.wiz-choice-btn:hover::after{opacity:1;transform:translateX(0)}
+.wiz-choice-emoji{font-size:1.5em;flex-shrink:0}
 .wiz-back-wrap{margin-top:20px}
-.wiz-back-btn{background:none;border:none;color:#a0856a;font-family:var(--font-jp);font-size:13px;cursor:pointer;padding:4px 0;text-decoration:underline}
-.wiz-back-btn:hover{color:#3a2e28}
-.wiz-result-badge{display:inline-flex;align-items:center;gap:6px;background:#fdf8f3;border:1.5px solid #c4956a;color:#c4956a;font-family:var(--font-jp);font-size:12px;font-weight:700;padding:4px 14px;border-radius:100px;margin-bottom:16px;letter-spacing:.06em}
-.wiz-result-title{font-family:var(--font-jp);font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:800;color:#3a2e28;margin:0 0 6px}
-.wiz-result-price{font-family:var(--font-mono);font-size:1rem;color:#c4956a;font-weight:700;margin:0 0 16px;letter-spacing:.04em}
-.wiz-result-desc{font-family:var(--font-jp);font-size:15px;line-height:1.85;color:#3a2e28;margin:0 0 20px}
+.wiz-back-btn{
+  background:none;border:none;color:#5a8f5f;
+  font-family:var(--font-jp);font-size:13px;cursor:pointer;
+  padding:4px 0;text-decoration:underline;text-underline-offset:3px;
+}
+.wiz-back-btn:hover{color:#1a3a1c}
+.wiz-result-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:linear-gradient(135deg,#2d5f2a,#3d7a38);
+  color:#fff;font-family:var(--font-jp);font-size:12px;font-weight:700;
+  padding:5px 16px;border-radius:100px;margin-bottom:16px;
+  letter-spacing:.08em;box-shadow:0 3px 14px rgba(61,122,56,.35);
+}
+.wiz-result-title{
+  font-family:var(--font-jp);font-size:clamp(1.3rem,2.5vw,1.7rem);
+  font-weight:800;color:#1a3a1c;margin:0 0 6px;
+}
+.wiz-result-price{
+  font-family:var(--font-mono);font-size:1rem;color:#3d7a38;
+  font-weight:700;margin:0 0 16px;letter-spacing:.04em;
+}
+.wiz-result-desc{
+  font-family:var(--font-jp);font-size:15px;line-height:1.85;
+  color:#2a4a2c;margin:0 0 20px;padding:16px 18px;
+  background:#f0f9f1;border-radius:10px;border-left:4px solid #3d7a38;
+}
 .wiz-checklist{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:8px}
-.wiz-checklist li{display:flex;align-items:flex-start;gap:8px;font-family:var(--font-jp);font-size:14px;color:#3a2e28;line-height:1.5}
-.wiz-checklist li::before{content:"✓";color:#c4956a;font-weight:700;flex-shrink:0;margin-top:1px}
-.wiz-result-actions{display:flex;flex-direction:column;gap:10px}
-.wiz-line-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:16px;background:#06c755;color:#fff;border:none;border-radius:12px;font-family:var(--font-jp);font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;transition:background .2s,transform .15s}
-.wiz-line-btn:hover{background:#05b34b;transform:translateY(-2px)}
-.wiz-retry-btn{width:100%;padding:14px;background:none;border:2px solid #e8d8c8;border-radius:12px;font-family:var(--font-jp);font-size:14px;color:#a0856a;cursor:pointer;transition:border-color .2s,color .2s}
-.wiz-retry-btn:hover{border-color:#c4956a;color:#3a2e28}
-.wiz-nav-link{color:#c4956a !important}
+.wiz-checklist li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-family:var(--font-jp);font-size:14px;color:#2a4a2c;line-height:1.5;
+  padding:9px 14px;background:#f8fdf8;border-radius:8px;
+}
+.wiz-checklist li::before{
+  content:"✓";width:20px;height:20px;
+  background:#3d7a38;color:#fff;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;font-weight:700;flex-shrink:0;margin-top:1px;
+}
+.wiz-result-actions{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.wiz-line-btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:18px;
+  background:linear-gradient(135deg,#06c755,#05b34b);
+  color:#fff;border:none;border-radius:14px;
+  font-family:var(--font-jp);font-size:16px;font-weight:700;
+  cursor:pointer;text-decoration:none;
+  transition:all .22s;box-shadow:0 4px 22px rgba(6,199,85,.38);
+}
+.wiz-line-btn:hover{background:linear-gradient(135deg,#05b34b,#049e41);transform:translateY(-2px);box-shadow:0 8px 30px rgba(6,199,85,.48)}
+.wiz-retry-btn{
+  width:100%;padding:14px;background:none;
+  border:2px solid #c2dbc4;border-radius:14px;
+  font-family:var(--font-jp);font-size:14px;color:#4a7a50;
+  cursor:pointer;transition:all .22s;
+}
+.wiz-retry-btn:hover{border-color:#3d7a38;color:#1a3a1c;background:#f0f9f1}
+.wiz-nav-link{color:#3d7a38 !important;font-weight:700 !important}
 @media(max-width:640px){
-  .wiz-card{padding:24px 16px}
-  .wiz-choice-btn{font-size:14px;padding:12px 14px;gap:10px}
+  .wiz-card-body{padding:20px 16px 24px}
+  .wiz-card-banner{padding:18px 16px 14px}
+  .wiz-card-banner-title{font-size:.9rem}
+  .wiz-choice-btn{font-size:14px;padding:14px 14px;gap:10px}
   .wiz-result-title{font-size:1.2rem}
 }
 
@@ -1703,14 +1796,23 @@ button{font:inherit}
       <p class="wiz-subtitle">3〜4問に答えるだけで、最適なサービスをご提案します。</p>
     </div>
     <div class="wiz-card">
-      <div class="wiz-progress-wrap">
-        <div class="wiz-progress-bar" id="wizProgress"></div>
+      <div class="wiz-card-banner">
+        <div class="wiz-card-banner-icon">✨</div>
+        <div>
+          <div class="wiz-card-banner-label">Diagnosis Wizard</div>
+          <div class="wiz-card-banner-title">3〜4問答えるだけ！あなたにぴったりのプランをご提案します</div>
+        </div>
       </div>
-      <div class="wiz-step-label" id="wizStepLabel">STEP 1 / 3</div>
-      <div id="wizQuestionArea"></div>
-      <div id="wizResultArea" style="display:none"></div>
-      <div class="wiz-back-wrap" id="wizBackWrap" style="display:none">
-        <button class="wiz-back-btn" id="wizBackBtn">← 前の質問に戻る</button>
+      <div class="wiz-card-body">
+        <div class="wiz-progress-wrap">
+          <div class="wiz-progress-bar" id="wizProgress"></div>
+        </div>
+        <div class="wiz-step-label" id="wizStepLabel">STEP 1 / 3</div>
+        <div id="wizQuestionArea"></div>
+        <div id="wizResultArea" style="display:none"></div>
+        <div class="wiz-back-wrap" id="wizBackWrap" style="display:none">
+          <button class="wiz-back-btn" id="wizBackBtn">← 前の質問に戻る</button>
+        </div>
       </div>
     </div>
   </div>
