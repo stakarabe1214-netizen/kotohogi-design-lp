@@ -225,24 +225,26 @@ button{font:inherit}
 .logo-name small{display:block;font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--ink-soft);font-weight:400;margin-top:2px}
 .logo-img{height:40px;width:auto;display:block;object-fit:contain}
 .foot .logo-img{filter:brightness(0) invert(1)}
+.hdr{display:none}
 .hdr-right{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
 
 /* ─────────── site nav bar ─────────── */
 .site-nav{
-  position:fixed;left:0;right:0;z-index:101;
+  position:fixed;top:0;left:0;right:0;z-index:101;
   background:rgba(242,246,236,.96);backdrop-filter:blur(14px);
   border-bottom:1px solid var(--line-warm);
   box-shadow:0 2px 16px rgba(58,74,61,.07);
-  transform:translateY(-110%);
-  transition:transform .35s cubic-bezier(.4,0,.2,1);
+  display:flex;align-items:center;
+  padding:0 24px;
 }
-.site-nav.nav-visible{transform:translateY(0)}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;text-decoration:none;padding:8px 12px 8px 0}
+.nav-logo .logo-img{height:34px;width:auto}
 .site-nav-inner{
-  display:flex;align-items:center;justify-content:center;
-  gap:2px;padding:6px 16px;
+  display:flex;align-items:center;justify-content:flex-end;
+  gap:2px;padding:6px 0;
   overflow-x:auto;-webkit-overflow-scrolling:touch;
   scrollbar-width:none;
-  white-space:nowrap;max-width:860px;margin:0 auto;
+  white-space:nowrap;flex:1;
 }
 .site-nav-inner::-webkit-scrollbar{display:none}
 .site-nav a{
@@ -256,8 +258,10 @@ button{font:inherit}
 .site-nav a:hover{color:var(--terra-deep);background:var(--cream-deep)}
 .site-nav a.nav-active{color:var(--terra-deep);background:var(--cream-deep)}
 @media(max-width:640px){
-  .site-nav-inner{justify-content:flex-start;gap:0;padding:4px 8px}
-  .site-nav a{font-size:12px;padding:8px 12px}
+  .site-nav{padding:0 12px}
+  .nav-logo .logo-img{height:26px}
+  .site-nav-inner{justify-content:flex-start;gap:0;padding:4px 0 4px 4px}
+  .site-nav a{font-size:12px;padding:8px 10px}
 }
 
 /* ─────────── hero ─────────── */
@@ -1494,6 +1498,9 @@ button{font:inherit}
 
 <!-- Site Nav Bar -->
 <nav class="site-nav" id="siteNav" aria-label="ページ内ナビゲーション">
+  <a class="nav-logo" href="#top" aria-label="ホームへ">
+    <img src="images/logo.png" alt="おりなす.Lab" class="logo-img">
+  </a>
   <div class="site-nav-inner">
     <a href="#services">サービス</a>
     <a href="#flow">制作の流れ</a>
@@ -2352,17 +2359,13 @@ const siteNav = document.getElementById('siteNav');
 const navSections = ['services','flow','pricing','works','faq'];
 
 function updateSiteNav(){
-  const hdrH = hdr.getBoundingClientRect().height;
-  siteNav.style.top = hdrH + 'px';
-  const heroEl = document.getElementById('top');
-  const heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 0;
-  siteNav.classList.toggle('nav-visible', heroBottom < 0);
+  const navH = siteNav.getBoundingClientRect().height;
   // active section highlight
   let current = '';
   navSections.forEach(id => {
     const el = document.getElementById(id);
     if(!el) return;
-    if(el.getBoundingClientRect().top <= hdrH + 60) current = id;
+    if(el.getBoundingClientRect().top <= navH + 60) current = id;
   });
   siteNav.querySelectorAll('a').forEach(a => {
     a.classList.toggle('nav-active', a.getAttribute('href') === '#' + current);
