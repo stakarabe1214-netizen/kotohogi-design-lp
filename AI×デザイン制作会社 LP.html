@@ -666,10 +666,10 @@ button{font:inherit}
 }
 .svc:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,0.14)}
 .svc-header{
-  height:170px;
+  height:88px;
   background:linear-gradient(135deg,#6aaa64 0%,#4a8a44 100%);
-  position:relative;display:flex;align-items:flex-start;justify-content:center;
-  padding-top:16px;overflow:hidden;
+  position:relative;display:flex;align-items:center;justify-content:center;
+  padding-top:0;overflow:hidden;
 }
 .svc .tag{
   position:absolute;top:12px;left:12px;
@@ -680,7 +680,7 @@ button{font:inherit}
   display:inline-block;border:none;
 }
 .svc .ico{
-  width:80px;height:80px;border-radius:0;
+  width:56px;height:56px;border-radius:0;
   background:none;
   color:#fff;display:grid;place-items:center;margin:0;
   box-shadow:none;
@@ -688,11 +688,11 @@ button{font:inherit}
 }
 .svc:hover .ico{transform:rotate(-6deg) scale(1.05)}
 .svc .ico svg{width:40px;height:40px}
-.svc-icon{width:176px;height:176px;object-fit:contain;display:block;filter:brightness(0.6) contrast(1.4);}
-.svc-body{padding:28px;}
-.svc h3{font-size:20px;margin:0 0 10px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:700;color:var(--ink)}
-.svc p{margin:0 0 24px;color:#666;font-size:14px;line-height:1.85}
-.svc p{margin:0 0 24px;color:var(--ink);font-size:14.5px;line-height:1.85}
+.svc-emoji{font-size:2.6rem;line-height:1;display:block;filter:drop-shadow(0 2px 6px rgba(0,0,0,.18))}
+.svc-icon{display:none}
+.svc-body{padding:20px 22px 22px;}
+.svc h3{font-size:18px;margin:0 0 8px;letter-spacing:.03em;font-family:var(--font-jp);font-weight:700;color:var(--ink)}
+.svc p{margin:0 0 16px;color:var(--ink);font-size:14px;line-height:1.85}
 .svc .more{
   display:inline-flex;align-items:center;gap:8px;
   font-size:12px;color:var(--terra-deep);font-weight:500;letter-spacing:.05em;
@@ -2025,7 +2025,7 @@ button{font:inherit}
       <article class="svc reveal">
         <div class="svc-header">
           <span class="tag">01 / Print</span>
-          <div class="ico"><img src="/public/images/aikon01.png" alt="ポスター・チラシ制作" class="svc-icon"></div>
+          <div class="ico"><span class="svc-emoji">🖨️</span></div>
         </div>
         <div class="svc-body">
           <h3>ポスター・チラシ制作</h3>
@@ -2037,7 +2037,7 @@ button{font:inherit}
       <article class="svc reveal d2">
         <div class="svc-header">
           <span class="tag">02 / Social</span>
-          <div class="ico"><img src="/public/images/aikon02.png" alt="SNS運用素材制作" class="svc-icon"></div>
+          <div class="ico"><span class="svc-emoji">📱</span></div>
         </div>
         <div class="svc-body">
           <h3>SNS運用素材制作</h3>
@@ -2049,7 +2049,7 @@ button{font:inherit}
       <article class="svc reveal d3">
         <div class="svc-header">
           <span class="tag">03 / Web</span>
-          <div class="ico"><img src="/public/images/aikon03.png" alt="LP制作" class="svc-icon"></div>
+          <div class="ico"><span class="svc-emoji">💻</span></div>
         </div>
         <div class="svc-body">
           <h3>LP制作</h3>
@@ -2061,7 +2061,7 @@ button{font:inherit}
       <article class="svc reveal">
         <div class="svc-header">
           <span class="tag">04 / Brand</span>
-          <div class="ico"><img src="/public/images/aikon04.png" alt="ブランディング支援" class="svc-icon"></div>
+          <div class="ico"><span class="svc-emoji">🎨</span></div>
         </div>
         <div class="svc-body">
           <h3>ブランディング支援</h3>
@@ -2073,7 +2073,7 @@ button{font:inherit}
       <article class="svc reveal d2">
         <div class="svc-header">
           <span class="tag">05 / Photo</span>
-          <div class="ico"><img src="/public/images/aikon05.png" alt="メニュー・商品撮影" class="svc-icon"></div>
+          <div class="ico"><span class="svc-emoji">📷</span></div>
         </div>
         <div class="svc-body">
           <h3>メニュー・商品撮影</h3>
@@ -2085,7 +2085,7 @@ button{font:inherit}
       <article class="svc reveal d3">
         <div class="svc-header">
           <span class="tag">06 / AI</span>
-          <div class="ico"><img src="/public/images/aikon06.png" alt="業務効率化サポート" class="svc-icon"></div>
+          <div class="ico"><span class="svc-emoji">💡</span></div>
         </div>
         <div class="svc-body">
           <h3>業務効率化サポート</h3>
