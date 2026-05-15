@@ -225,6 +225,7 @@ button{font:inherit}
 .logo-name small{display:block;font-family:var(--font-mono);font-size:9px;letter-spacing:.2em;color:var(--ink-soft);font-weight:400;margin-top:2px}
 .logo-img{height:40px;width:auto;display:block;object-fit:contain}
 .foot .logo-img{filter:brightness(0) invert(1)}
+.foot-brand-name{font-family:var(--font-jp);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:800;letter-spacing:.04em;color:rgba(255,255,255,.95);margin:10px 0 6px;line-height:1}
 .hdr{display:none}
 .hdr-right{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
 
@@ -302,6 +303,7 @@ button{font:inherit}
   transform-origin:left;animation:underline 1.4s cubic-bezier(.7,0,.3,1) .8s both;
 }
 @keyframes underline{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.h1-brand{color:var(--terra-deep);font-style:normal;letter-spacing:.02em}
 .hero .sub{
   font-size:clamp(.95rem,1.15vw,1.08rem);
   line-height:2;color:var(--ink-soft);
@@ -1527,8 +1529,8 @@ button{font:inherit}
       </div>
       <span class="eyebrow"><span class="dot"></span><span>Design Studio</span><span class="bar"></span><span>Kobe</span></span>
       <h1>
-        デザインを、<br/>
-        丸ごとお<span class="accent">任せ</span>ください。
+        <span class="h1-brand">おりなす.Lab</span> が、<br/>
+        デザインを丸ごと<br/>お<span class="accent">任せ</span>します。
       </h1>
       <div class="hero-badges">
         <span class="hero-badge">夫婦チーム</span>
@@ -2170,7 +2172,7 @@ button{font:inherit}
         <span class="eyebrow"><span class="dot"></span><span>About</span></span>
         <h2 class="h-display" style="margin-top:18px">私たちに<em>ついて</em>。</h2>
         <p class="body">
-          私たちは、夫婦二人で運営する<br/>小さなワンストップ制作会社です。<br/><br/>
+          <strong>おりなす.Lab</strong> は、夫婦二人で運営する<br/>小さなワンストップ制作会社です。<br/><br/>
           チラシ・SNS・LP・撮影・ブランディングまで、<br/>"伝わる"をひとつの窓口でサポートします。<br/><br/>
           大手にはない柔軟さと、<br/>顔の見える温かいコミュニケーションで、<br/>一つひとつの案件にていねいに向き合います。<br/><br/>
           「こんなこと、相談してもいいですか？」<br/>
@@ -2277,6 +2279,7 @@ button{font:inherit}
     <div class="foot-grid">
       <div>
         <div class="logo"><img src="images/logo.png" alt="おりなす.Lab" class="logo-img"></div>
+        <p class="foot-brand-name">おりなす.Lab</p>
         <p>合同会社（設立予定）<br/>〒651-XXXX 神戸市北区<br/>全国対応・夫婦チーム</p>
       </div>
       <div>
