@@ -1574,6 +1574,198 @@ button{font:inherit}
   .section-cta-block .cta-primary,.section-cta-block .cta-outline{width:100%;text-align:center}
 }
 
+/* ═══════════════════════════════════════════════════
+   モバイルファースト最適化（スマホ表示全面改善）
+   ═══════════════════════════════════════════════════ */
+
+/* ── 600px 以下（②Hero ③セクション共通 ④Pricing ⑤ボタン） ── */
+@media (max-width: 600px) {
+  /* ② Hero */
+  .hero {
+    padding: 90px 0 60px;
+    min-height: auto;
+  }
+  .hero-grid {
+    padding: 0 20px;
+    gap: 32px;
+  }
+  .hero h1 {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    line-height: 1.4;
+    margin: 16px 0 14px;
+  }
+  .fv-pain-text {
+    display: block;
+    font-size: 13px;
+    line-height: 1.9;
+  }
+  .fv-pain-close {
+    display: block;
+    font-size: 14px;
+  }
+  .hero-new-ctas {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .cta-primary,
+  .cta-outline {
+    width: 100%;
+    font-size: 16px;
+    padding: 16px 24px;
+    text-align: center;
+    justify-content: center;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    justify-content: center;
+    font-size: 15px;
+    padding: 16px 20px;
+  }
+  .hero-meta {
+    gap: 14px;
+    margin-top: 32px;
+    padding-top: 20px;
+    font-size: 10px;
+  }
+  /* ③ セクション共通 */
+  .section {
+    padding: 72px 0;
+  }
+  .wrap,
+  .wrap-tight {
+    padding: 0 18px;
+  }
+  .h-display {
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
+    line-height: 1.5;
+  }
+  .lede {
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 100%;
+  }
+  .section-head {
+    margin-bottom: 36px;
+    gap: 16px;
+  }
+  .eyebrow {
+    font-size: 13px;
+  }
+  /* ④ Pricing */
+  .price {
+    padding: 24px 20px;
+    border-radius: 16px;
+  }
+  .price .amount {
+    font-size: 1.8rem;
+  }
+  .price li {
+    font-size: 13.5px;
+    padding: 8px 0 8px 22px;
+  }
+  .price h3 {
+    font-size: 1.1rem;
+  }
+  .price-cat-title {
+    font-size: 17px;
+  }
+  .price-category {
+    margin-top: 40px;
+  }
+  .price-divider {
+    margin: 36px 0;
+  }
+  /* ⑤ ボタン タップターゲット */
+  .btn,
+  .cta-primary,
+  .cta-outline {
+    min-height: 52px;
+  }
+  .btn-ghost {
+    min-height: 44px;
+    padding: 10px 0;
+    font-size: 14px;
+  }
+  .floating-cta {
+    padding: 14px 20px;
+    font-size: 14px;
+    min-height: 52px;
+    right: 14px;
+    bottom: 14px;
+  }
+}
+
+/* ── 480px 以下（① Nav ② hero-art復元 ⑥ Works/Voices/FAQ） ── */
+@media (max-width: 480px) {
+  /* ① Nav */
+  .site-nav {
+    padding: 0 8px;
+  }
+  .site-nav a {
+    font-size: 11px;
+    padding: 10px 8px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .nav-logo .logo-img {
+    height: 24px;
+  }
+  /* ② hero-art — 既存 display:none を上書きして復元 */
+  .hero-art {
+    display: block;
+    width: 100%;
+    height: 220px;
+    border-radius: 14px;
+    -webkit-mask-image: none;
+    mask-image: none;
+    overflow: hidden;
+  }
+  /* ⑥ Works */
+  .work-body h4 {
+    font-size: 0.95rem;
+  }
+  .work-body p,
+  .work-body .tags {
+    font-size: 12.5px;
+  }
+  /* ⑥ Voices */
+  .test {
+    padding: 24px 20px;
+  }
+  .test p {
+    font-size: 13.5px;
+    line-height: 1.9;
+  }
+  .test .qmark {
+    font-size: 60px;
+    top: 12px;
+    right: 16px;
+  }
+  /* ⑥ FAQ */
+  .faq summary {
+    font-size: 0.95rem;
+    padding: 18px 18px;
+    gap: 12px;
+  }
+  .faq .ans {
+    font-size: 13px;
+    padding: 0 18px 20px 18px;
+  }
+  .faq summary .q {
+    width: 26px;
+    height: 26px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+}
+
 </style>
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
